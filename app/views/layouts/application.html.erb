@@ -1,139 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mldecor</title>
+    <title>Крипто Обмен</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <script type="text/javascript">
+    window.dataCommerce = [];
+    window.isSleep = false;
+    window.sleepEnd = '0';
+    window.Config = {"COMPOSITE_STATUS_URL":"https:\/\/api.kassa.cc\/uploads\/composite_status.json"};
+    </script>
+    <script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Kassa.cc — единый обмен валюты",
+    "image": "https://kassa.cc/templates/kassa/img/logo.png",
+    "email": "support@kassa.cc",
+    "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": {
+    "@type": "DayOfWeek",
+    "name": "Ежедневно"
+    },
+    "opens": "00:00 - 23:59"
+    },
+    "url": "https://kassa.cc/"
+    }
+    </script>
+    
   </head>
 
   <body>
-<div data-container="header">
-<div class="header_14e">
-<div class="header_aWd">
-<div class="header_312">
-<a class="header_1-Z" href="/">
-<img src="/templates/kassa/img/logo2017.png" alt="Kassa.cc" width="169" height="39">
-</a>
-<div class="header_37X">
-
-<span class="userpanel_crownCirle">
-<span class="userpanel_crown"></span>
-</span>
-<span class="HW_badge_cont HW_visible">
-<span class="HW_badge HW_softHidden" data-count-unseen="">1</span>
-</span>
-</div>
-</div>
-<div class="navigation_WfZ">
-<a href="/pravila_obmena" target="_self" class="navigation_1VU" title="Правила обмена">
-Правила обмена
-</a>
-<a href="/partners" target="_self" class="navigation_1VU" title="Партнерам">
-Партнерам
-</a>
-<a href="/news" target="_self" class="navigation_1VU" title="Новости">
-Новости
-</a>
-<a href="/faq" target="_self" class="navigation_1VU" title="FAQ">
-FAQ
-</a>
-<a href="/contact" target="_self" class="navigation_1VU" title="Контакты">
-Контакты
-</a>
-
-</div>
-<div class="userpanel_1nF">
-<button data-toggle="modal" data-target="#modalSingin" class="userpanel_7sH">
-<span class="userpanel_2iA">
-<span class="userpanel_oWl"></span>
-</span> Войти
-</button>
-<span class="userpanel_3dg">или</span>
-<a href="/registration">
-<button class="buttons_1dN">Зарегистрируйтесь</button>
-</a>
-</div>
-</div>
-</div>
-<div class="header_sm_2y4">
-<div class="header_sm_WNG">
-<button id="headerSmallOpen" class="header_sm_3KJ">
-<span class="header_sm_1WG"></span>
-</button>
-<div class="header_sm_3z6">
-<a href="/">
-<img src="/templates/kassa/img/logo_sm.jpg" alt="Kassa.cc" class="header_sm_1YO" width="237" height="64">
-</a>
-<div class="header_sm_gift">
-
-<span class="userpanel_crownCirle">
-<span class="userpanel_crown"></span>
-</span>
-<span class="HW_badge_cont HW_visible HW_mobile">
-<span class="HW_badge HW_softHidden" data-count-unseen="">1</span>
-</span>
-</div>
-</div>
-<button class="header_sm_3ma" data-toggle="modal" data-target="#modalSingin">
-<span class="header_sm_3l8"></span>
-</button>
-</div>
-<div class="header_sm_nav_wkF">
-<div class="header_sm_nav_C5D">
-
-<div class="header_sm_nav_1Eu">
-<div class="header_sm_nav_17v">
-<a href="/pravila_obmena" target="_self" title="Правила обмена">
-Правила обмена
-</a>
-</div>
-<div class="header_sm_nav_17v">
-<a href="/partners" target="_self" title="Партнерам">
-Партнерам
-</a>
-</div>
-<div class="header_sm_nav_17v">
-<a href="/news" target="_self" title="Новости">
-Новости
-</a>
-</div>
-<div class="header_sm_nav_17v">
-<a href="/faq" target="_self" title="FAQ">
-FAQ
-</a>
-</div>
-<div class="header_sm_nav_17v">
-<a href="/contact" target="_self" title="Контакты">
-Контакты
-</a>
-</div>
-
-</div>
-</div>
-<div class="header_sm_nav_-Gy">
-<div class="header_sm_nav_C5D">
-<div class="header_sm_nav_29F">
-<a href="/pravila_obmena">Правила и условия сервиса</a>
-</div>
-<div class="header_sm_nav_29F">
-<a href="/referalusers.html">Подарки от сайта</a>
-</div>
-</div>
-<div class="header_sm_nav_29F">
-<a href="#" data-toggle="modal" data-target="#modalAboutService">
-О сервисе
-</a>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-    <div class="Site_Wrapper">
-      <div class="Site_Content">
-        <%= yield %>
+  <!--
+    <%= render 'layouts/header' %>
+    -->
+    <div data-container="module" class="module_deo">
+      <div data-container="main" class="main_dAF">
+        <div class="main_2Js">
+            <%= yield %>
+        </div>
       </div>
     </div>
   </body>
