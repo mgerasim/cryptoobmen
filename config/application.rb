@@ -14,5 +14,13 @@ module Cryptoobmen
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.assets.enabled = true  
+    config.serve_static_assets = true
+    config.assets.js_compressor = :uglifier
+    config.assets.compile = true
+    config.assets.digest = true
+    config.assets.version = '1.0'
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
   end
 end

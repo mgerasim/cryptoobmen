@@ -61,3 +61,5 @@ group :development do
   gem 'capistrano3-puma',   require: false
 end
 
+gem 'shufflejs-rails'
+gem 'jquery-rails'
