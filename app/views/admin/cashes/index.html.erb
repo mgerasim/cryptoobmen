@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Короткое наименование</th>
+      <th>Ед. валюты</th>
       <th>Полное наименование</th>
       <th>Логотип</th>
       <th>Тип</th>
@@ -18,7 +18,10 @@
       <tr>
         <td><%= admin_cash.code %></td>
         <td><%= admin_cash.name %></td>
-        <td><%= admin_cash.icon %></td>
+        <td>                            
+    	    <span class="<%= admin_cash.icon %>"></span>
+                                
+        </td>
         <td><%= admin_cash.category %></td>
         <td><%= link_to 'Показать', admin_cash %></td>
         <td><%= link_to 'Редактировать', edit_admin_cash_path(admin_cash) %></td>
