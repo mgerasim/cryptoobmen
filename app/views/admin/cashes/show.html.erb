@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @admin_cash.code %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_cash.name %>
+</p>
+
+<p>
+  <strong>Icon:</strong>
+  <%= @admin_cash.icon %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @admin_cash.category %>
+</p>
+
+<%= link_to 'Edit', edit_admin_cash_path(@admin_cash) %> |
+<%= link_to 'Back', admin_cashes_path %>

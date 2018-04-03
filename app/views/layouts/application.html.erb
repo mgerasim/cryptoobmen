@@ -36,7 +36,12 @@
 
   <body>
   
-    <%= render 'layouts/header' %>
+    <% if logged_in? %>
+      <%= render 'layouts/header_admin' %>
+    <% else %>
+      <%= render 'layouts/header' %>
+    <% end %>
+    
     
     <div data-container="module" class="module_deo">
       <div data-container="main" class="main_dAF">

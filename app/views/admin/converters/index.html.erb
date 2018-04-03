@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Направление обмена</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Коффициент конвертации (%)</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_converters.each do |admin_converter| %>
+      <tr>
+        <td><%= admin_converter.coeff_procent %></td>
+        <td><%= link_to 'Показать', admin_converter %></td>
+        <td><%= link_to 'Редактировать', edit_admin_converter_path(admin_converter) %></td>
+        <td><%= link_to 'Удалить', admin_converter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Добавить', new_admin_converter_path %>
