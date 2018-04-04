@@ -15,5 +15,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require shuffle
+//= require bootstrap-sprockets
 //= require_tree .
 
