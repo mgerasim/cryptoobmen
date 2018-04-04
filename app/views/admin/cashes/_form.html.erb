@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :code %>
+  <div class="form_2Ix">
+    <%= form.label "Краткое наименование:" %>
     <%= form.text_field :code, id: :admin_cash_code %>
   </div>
 
-  <div class="field">
-    <%= form.label :name %>
+  <div class="form_2Ix">
+    <%= form.label "Полное наименование:" %>
     <%= form.text_field :name, id: :admin_cash_name %>
   </div>
 
-  <div class="field">
-    <%= form.label :icon %>
+  <div class="form_2Ix">
+    <%= form.label "Логотип" %>
     <%= form.text_field :icon, id: :admin_cash_icon %>
   </div>
 
-  <div class="field">
-    <%= form.label :category %>
+  <div class="form_2Ix">
+    <%= form.label "Тип" %>
     <%= form.number_field :category, id: :admin_cash_category %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Сохранить" %>
   </div>
 <% end %>
