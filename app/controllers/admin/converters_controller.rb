@@ -19,15 +19,19 @@ class Admin::ConvertersController < ApplicationController
 
   # GET /admin/converters/1/edit
   def edit
+    @selected_cash_a = @admin_converter.cash_a.id
+    @selected_cash_b = @admin_converter.cash_b_id
   end
 
   # POST /admin/converters
   # POST /admin/converters.json
   def create
     @admin_converter = Admin::Converter.new(admin_converter_params)
-
+    @admin_converter.cash_a = Admin::Cash.find(params[:admin_converter][:cash_a])
+    @admin_converter.cash_b = Admin::Cash.find(params[:admin_converter][:cash_b])
     respond_to do |format|
       if @admin_converter.save
+      
         format.html { redirect_to @admin_converter, notice: 'Converter was successfully created.' }
         format.json { render :show, status: :created, location: @admin_converter }
       else
@@ -41,6 +45,8 @@ class Admin::ConvertersController < ApplicationController
   # PATCH/PUT /admin/converters/1.json
   def update
     respond_to do |format|
+      @admin_converter.cash_a = Admin::Cash.find(params[:admin_converter][:cash_a])
+      @admin_converter.cash_b = Admin::Cash.find(params[:admin_converter][:cash_b])
       if @admin_converter.update(admin_converter_params)
         format.html { redirect_to @admin_converter, notice: 'Converter was successfully updated.' }
         format.json { render :show, status: :ok, location: @admin_converter }

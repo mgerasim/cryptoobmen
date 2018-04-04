@@ -1,9 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Coeff procent:</strong>
+  <strong>Отдаёте:</strong>
+  <%= @admin_converter.cash_a.name %>
+</p>
+
+<p>
+  <strong>Получаете:</strong>
+  <%= @admin_converter.cash_b.name %>
+</p>
+
+<p>
+  <strong>Коэффициент конвертации:</strong>
   <%= @admin_converter.coeff_procent %>
 </p>
 
-<%= link_to 'Edit', edit_admin_converter_path(@admin_converter) %> |
-<%= link_to 'Back', admin_converters_path %>
+<%= link_to 'Редактировать', edit_admin_converter_path(@admin_converter) %> |
+<%= link_to 'Назад', admin_converters_path %>

@@ -11,12 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :coeff_procent %>
+  <div class="form_2Ix">
+    <%= form.label "Отдаёте:" %>
+    <%= form.select :cash_a, Admin::Cash.all.collect { |p| [p.name, p.id] }, :selected=>@selected_cash_a %>
+  </div>
+  
+  <div class="form_2Ix">
+    <%= form.label "Получаете:" %>
+    <%= form.select :cash_b, Admin::Cash.all.collect { |p| [p.name, p.id] }, :selected=>@selected_cash_b %>
+  </div>
+
+  <div class="form_2Ix">
+    <%= form.label "Коффициент конвертации (%):" %>
     <%= form.number_field :coeff_procent, id: :admin_converter_coeff_procent %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Сохранить" %>
   </div>
 <% end %>

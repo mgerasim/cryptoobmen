@@ -5,6 +5,8 @@
 <table>
   <thead>
     <tr>
+      <th>Отдаёте</th>
+      <th>Получаете</th>
       <th>Коффициент конвертации (%)</th>
       <th colspan="3"></th>
     </tr>
@@ -13,6 +15,8 @@
   <tbody>
     <% @admin_converters.each do |admin_converter| %>
       <tr>
+        <td><%= admin_converter.cash_a.name %></td>
+        <td><%= admin_converter.cash_b.name %></td>
         <td><%= admin_converter.coeff_procent %></td>
         <td><%= link_to 'Показать', admin_converter %></td>
         <td><%= link_to 'Редактировать', edit_admin_converter_path(admin_converter) %></td>

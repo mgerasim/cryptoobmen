@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180403031601) do
+ActiveRecord::Schema.define(version: 20180404010547) do
 
   create_table "admin_cashes", force: :cascade do |t|
     t.string "code"
@@ -25,6 +25,10 @@ ActiveRecord::Schema.define(version: 20180403031601) do
     t.integer "coeff_procent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "cash_a_id"
+    t.integer "cash_b_id"
+    t.index ["cash_a_id"], name: "index_admin_converters_on_cash_a_id"
+    t.index ["cash_b_id"], name: "index_admin_converters_on_cash_b_id"
   end
 
 end
