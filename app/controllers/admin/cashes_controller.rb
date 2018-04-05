@@ -15,10 +15,12 @@ class Admin::CashesController < ApplicationController
   # GET /admin/cashes/new
   def new
     @admin_cash = Admin::Cash.new
+    @category_id = 1
   end
 
   # GET /admin/cashes/1/edit
   def edit
+    @category_id = @admin_cash.category
   end
 
   # POST /admin/cashes
