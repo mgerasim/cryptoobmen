@@ -1,4 +1,9 @@
-<%= form_with(model: admin_converter, local: true) do |form| %>
+<%= form_with(model: admin_converter, local: true, :class=>"form-horizontal") do |form| %>
+
+<div class="row">
+  <div class="col-md-2"></div>  
+    <div class="col-md-8">
+
   <% if admin_converter.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(admin_converter.errors.count, "error") %> prohibited this admin_converter from being saved:</h2>
@@ -11,22 +16,42 @@
     </div>
   <% end %>
 
-  <div class="form_2Ix">
-    <%= form.label "Отдаёте:" %>
-    <%= form.select :cash_a, Admin::Cash.all.collect { |p| [p.name, p.id] }, :selected=>@selected_cash_a %>
+  <div class="form-group">
+    <%= form.label "Отдаёте:" , :class=>"col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= form.select :cash_a, Admin::Cash.all.collect { |p| [p.name, p.id] }, :selected=>@selected_cash_a, :class=>"form-control"  %>
+    </div>
   </div>
   
-  <div class="form_2Ix">
-    <%= form.label "Получаете:" %>
-    <%= form.select :cash_b, Admin::Cash.all.collect { |p| [p.name, p.id] }, :selected=>@selected_cash_b %>
+  <div class="form-group">
+    <%= form.label "Получаете:", :class=>"col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= form.select :cash_b, Admin::Cash.all.collect { |p| [p.name, p.id] }, :selected=>@selected_cash_b, :class=>"form-control"  %>
+    </div>
   </div>
 
-  <div class="form_2Ix">
-    <%= form.label "Коффициент конвертации (%):" %>
-    <%= form.number_field :coeff_procent, id: :admin_converter_coeff_procent %>
+  <div class="form-group">
+    <%= form.label "Коффициент конвертации (%):", :class=>"col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= form.number_field :coeff_procent, id: :admin_converter_coeff_procent, :class=>"form-control"  %>
+    </div>
+  </div>
+  <div class="form-group">
+
+  <%= form.label "Коммиссия в криптовалюте (/1000):", :class=>"col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= form.number_field :cryptocommission, id: :admin_converter_cryptocommission, :class=>"form-control"  %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit "Сохранить" %>
+  <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+         <%= form.submit "Сохранить", :class=>"btn btn-default" %>
+      </div>
   </div>
+  
+ </div>
+ <div class="col-md-2"></div>
+</div>
+
 <% end %>

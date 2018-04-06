@@ -75,6 +75,6 @@ class Admin::ConvertersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_converter_params
-      params.require(:admin_converter).permit(:coeff_procent)
+      params.require(:admin_converter).permit(:coeff_procent, :cryptocommission)
     end
 end

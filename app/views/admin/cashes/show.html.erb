@@ -12,12 +12,12 @@
 
 <p>
   <strong>Логотип:</strong>
-  <%= @admin_cash.icon %>
+  <span class="<%= @admin_cash.icon %>"></span>  <%= @admin_cash.icon %>
 </p>
 
 <p>
   <strong>Тип:</strong>
-  <%= @admin_cash.category %>
+  <%= @admin_cash.category_name %>
 </p>
 
 <%= link_to 'Редактировать', edit_admin_cash_path(@admin_cash) %> |

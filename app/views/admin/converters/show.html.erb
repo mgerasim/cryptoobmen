@@ -1,3 +1,5 @@
+<h1>Просмотр направления обмена</h1>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -13,6 +15,11 @@
 <p>
   <strong>Коэффициент конвертации:</strong>
   <%= @admin_converter.coeff_procent %>
+</p>
+
+<p>
+  <strong>Комиссия в криптовалюте:</strong>
+  <%= @admin_converter.cryptocommission_display %>
 </p>
 
 <%= link_to 'Редактировать', edit_admin_converter_path(@admin_converter) %> |

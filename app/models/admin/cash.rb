@@ -14,4 +14,5 @@ class Admin::Cash < ApplicationRecord
         end
         end
     end
+    
 end

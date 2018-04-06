@@ -38,11 +38,30 @@
                 <p>
                     <span class="main_2aj"></span> Выберите систему:
                 </p>
+                
+                <div class="main_2Lu step_ps_list"> 
+                  
+    <% @cashes_a.each do |item| %>
+
+        
+        
+    	<div class="main_k0X" data-body="3" data-typecy="<%= item.cash_a.category %>" data-system-name="<%= item.cash_a.name %>" data-system-icon="<%= item.cash_a.icon %>" style="display: none;"><div class="main_1g8">                            <span class="<%= item.cash_a.icon %>"></span>
+    	                        </div>
+    	                        
+    	                                                <div class="main_2-h"><%= item.cash_a.name %></div>
+    	                                                                    </div>
+        
+        
+    <% end %>
+                </div>
+                
 
               </div>
             </div>
         </div>
     </div>
+    
+    
             <div class="main_3FS" data-exchange-column="output">
         <div data-block="main" class="main_xU-" style="height: 657.667px;">
             <div class="main_2eU">
