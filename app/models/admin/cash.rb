@@ -6,7 +6,7 @@ class Admin::Cash < ApplicationRecord
          if self.category == 2
              "Американская валюта"
         else
-        if self.category == 3
+        if self.category == 5
             "Критовалюта"
         else
             "Не задан"
