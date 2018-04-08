@@ -61,6 +61,14 @@ function(t){function e(t,e,n,i){var o,r,a,s,l,u,d,A=e&&e.ownerDocument,f=e?e.nod
          cash_b_icon2.className = '';
          cash_b_icon2.className = cash_b.data("system-icon");
          
+         var cash_input_currency = document.getElementById("cash_input_currency");
+         cash_input_currency.innerText = cash_a.data("input-currency");
+         document.getElementById("input-currency").innerText = cash_a.data("input-currency");
+         
+         
+         var cash_output_currency = document.getElementById("cash_output_currency");
+         cash_output_currency.innerText = cash_b.data("output-currency");
+         document.getElementById("output-currency").innerText = cash_b.data("output-currency");
      }
 
     function handleClickCashATypeCy(elem) {
@@ -94,7 +102,7 @@ function(t){function e(t,e,n,i){var o,r,a,s,l,u,d,A=e&&e.ownerDocument,f=e?e.nod
 $(document).ready(function() {
     
    
-   $("#init_cash_a").click();
+   handleClickCashATypeCy($($("#init_cash").children().get(0)));
 });
 
 document.addEventListener("DOMContentLoaded", function() {
