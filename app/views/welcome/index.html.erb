@@ -112,7 +112,7 @@
                 
                   
     <% @cashes_a.each do |item| %>
-    	<div class="main_k0X cash_b" data-body="3" data-cash_a=<%= item.cash_a.id %> data-output-currency="<%= item.cash_b.code %>" data-typecy="<%= item.cash_b.category %>" data-system-name="<%= item.cash_b.name %>" data-system-icon="<%= item.cash_b.icon %>" ><div class="main_1g8">                            <span class="<%= item.cash_b.icon %>"></span>
+    	<div class="main_k0X cash_b" data-course="<%= item.currency_exchange_display %>" data-body="3" data-cash_a=<%= item.cash_a.id %> data-output-currency="<%= item.cash_b.code %>" data-typecy="<%= item.cash_b.category %>" data-system-name="<%= item.cash_b.name %>" data-system-icon="<%= item.cash_b.icon %>" ><div class="main_1g8">                            <span class="<%= item.cash_b.icon %>"></span>
     	                        </div>
     	                        
     	                                                <div class="main_2-h"><%= item.cash_b.name %></div>
@@ -134,7 +134,7 @@
                   Обмен по курсу:
                   <span data-course="input-value">1</span>
                   <span id="input-currency" data-course="input-currency">btc.</span>
-                   = <span data-course="output-value">17.515</span>
+                   = <span id="currency_exhange" data-course="output-value">17.515</span>
                   <span id="output-currency" data-course="output-currency">eth</span>
                 </p>
                 <div class="main_1I3">

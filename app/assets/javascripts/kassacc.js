@@ -69,15 +69,18 @@ function(t){function e(t,e,n,i){var o,r,a,s,l,u,d,A=e&&e.ownerDocument,f=e?e.nod
          var cash_output_currency = document.getElementById("cash_output_currency");
          cash_output_currency.innerText = cash_b.data("output-currency");
          document.getElementById("output-currency").innerText = cash_b.data("output-currency");
+         
+         document.getElementById("currency_exhange").innerText = cash_b.data("course");
+         console.log(cash_b.data("course"));
      }
 
     function handleClickCashATypeCy(elem) {
        var cash_a = elem.data("cash");
-       
+       var isShowed = 0;
        $("#cashes_to").children().each(function(i, e) {
     	   $(e).removeClass('main_2nj');
     	   $(e).addClass('main_k0X');
-    	   var isShowed = 0;
+    	   
            if ($(e).data("cash_a") == cash_a) 
            {
         	$(e).show();
@@ -86,7 +89,7 @@ function(t){function e(t,e,n,i){var o,r,a,s,l,u,d,A=e&&e.ownerDocument,f=e?e.nod
         	    $(e).removeClass('main_k0X');
         	    $(e).addClass('main_2nj');
         	    updateQuery(elem, $(e) );
-        	    
+        	    console.log("update");
         	}
            }
            else
@@ -112,6 +115,38 @@ document.addEventListener("DOMContentLoaded", function() {
        handleClickCashATypeCy($(this));
    });
    
+   
+   $(".cash_b").click(function() {
+	$("#cashes_to").children().each(function(i, e) {
+    	   $(e).removeClass('main_2nj');
+    	   $(e).addClass('main_k0X');
+    	});
+    	
+    	$(this).removeClass('main_k0X');
+        $(this).addClass('main_2nj');
+        
+        var cash_b = $(this);
+           
+        var el2 = document.getElementById("form_cash_b_name");
+         el2.innerText = cash_b.data("system-name");
+         
+         var cash_b_icon = document.getElementById("form_cash_b_icon");
+         cash_b_icon.className = '';
+         cash_b_icon.className = cash_b.data("system-icon");
+         
+         var cash_b_icon2 = document.getElementById("form_cash_b_icon_2");
+         cash_b_icon2.className = '';
+         cash_b_icon2.className = cash_b.data("system-icon");
+         
+         
+         var cash_output_currency = document.getElementById("cash_output_currency");
+         cash_output_currency.innerText = cash_b.data("output-currency");
+         document.getElementById("output-currency").innerText = cash_b.data("output-currency");
+         
+         document.getElementById("currency_exhange").innerText = cash_b.data("course");
+         console.log(cash_b.data("course"));
+    
+   });
     
     classname = document.getElementsByClassName('main_Q66');
     console.log(classname);
