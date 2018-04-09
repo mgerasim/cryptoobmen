@@ -15,12 +15,14 @@ class Admin::ConvertersController < ApplicationController
   # GET /admin/converters/new
   def new
     @admin_converter = Admin::Converter.new
+    @source_course = 1
   end
 
   # GET /admin/converters/1/edit
   def edit
     @selected_cash_a = @admin_converter.cash_a.id
     @selected_cash_b = @admin_converter.cash_b_id
+    @source_course = @admin_converter.source_course
   end
 
   # POST /admin/converters
@@ -75,6 +77,6 @@ class Admin::ConvertersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_converter_params
-      params.require(:admin_converter).permit(:coeff_procent, :cryptocommission)
+      params.require(:admin_converter).permit(:coeff_procent, :cryptocommission, :source_course)
     end
 end

@@ -18,4 +18,16 @@ class Admin::Converter < ApplicationRecord
     end
   end
   
+  def source_course_display
+    if (self.source_course == 1)
+	"exmo.me"
+    else 
+	if (self.source_course == 2) 
+	    "cex.io"
+	else
+	    "Не определено"
+	end
+    end
+  end
+  
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180406123515) do
+ActiveRecord::Schema.define(version: 20180409040013) do
 
   create_table "admin_cashes", force: :cascade do |t|
     t.string "code"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20180406123515) do
     t.integer "cash_b_id"
     t.integer "cryptocommission"
     t.integer "currency_exchange", default: 10000
+    t.integer "source_course", default: 1
     t.index ["cash_a_id"], name: "index_admin_converters_on_cash_a_id"
     t.index ["cash_b_id"], name: "index_admin_converters_on_cash_b_id"
   end

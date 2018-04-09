@@ -17,10 +17,15 @@
   <%= @admin_converter.coeff_procent %>
 </p>
 
+
 <p>
   <strong>Комиссия в криптовалюте:</strong>
   <%= @admin_converter.cryptocommission_display %>
 </p>
 
+<p>
+  <strong>Биржа:</strong>
+  <%= @admin_converter.source_course_display %>
+</p>
 <%= link_to 'Редактировать', edit_admin_converter_path(@admin_converter) %> |
 <%= link_to 'Назад', admin_converters_path %>

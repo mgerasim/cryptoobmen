@@ -17,35 +17,44 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.label "Отдаёте:" , :class=>"col-sm-2 control-label" %>
-    <div class="col-sm-10">
+    <%= form.label "Отдаёте:" , :class=>"col-sm-3 control-label" %>
+    <div class="col-sm-9">
       <%= form.select :cash_a, Admin::Cash.all.collect { |p| [p.name, p.id] }, :selected=>@selected_cash_a, :class=>"form-control"  %>
     </div>
   </div>
   
   <div class="form-group">
-    <%= form.label "Получаете:", :class=>"col-sm-2 control-label" %>
-    <div class="col-sm-10">
+    <%= form.label "Получаете:", :class=>"col-sm-3 control-label" %>
+    <div class="col-sm-9">
       <%= form.select :cash_b, Admin::Cash.all.collect { |p| [p.name, p.id] }, :selected=>@selected_cash_b, :class=>"form-control"  %>
     </div>
   </div>
 
   <div class="form-group">
-    <%= form.label "Коффициент конвертации (%):", :class=>"col-sm-2 control-label" %>
-    <div class="col-sm-10">
+    <%= form.label "Коффициент конвертации (%):", :class=>"col-sm-3 control-label" %>
+    <div class="col-sm-9">
       <%= form.number_field :coeff_procent, id: :admin_converter_coeff_procent, :class=>"form-control"  %>
     </div>
   </div>
   <div class="form-group">
 
-  <%= form.label "Коммиссия в криптовалюте (/1000):", :class=>"col-sm-2 control-label" %>
-    <div class="col-sm-10">
+  <%= form.label "Коммиссия в криптовалюте (/1000):", :class=>"col-sm-3 control-label" %>
+    <div class="col-sm-9">
       <%= form.number_field :cryptocommission, id: :admin_converter_cryptocommission, :class=>"form-control"  %>
     </div>
   </div>
+  
+  <div class="form-group">    
+    <%= form.label "Биржа:", :class=>"col-sm-3 control-label" %>
+    <div class="col-sm-9">
+	<%= form.select :source_course, options_for_select([['exmo.me', 1], ['cex.io', 2] ], @source_course), {}, {:class => '',  id: :admin_convert_source_course} %>
+    </div>
+  </div>
+  
+
 
   <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
+      <div class="col-sm-offset-3 col-sm-9">
          <%= form.submit "Сохранить", :class=>"btn btn-default" %>
       </div>
   </div>
