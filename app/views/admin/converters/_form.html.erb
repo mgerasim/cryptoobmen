@@ -19,14 +19,14 @@
   <div class="form-group">
     <%= form.label "Отдаёте:" , :class=>"col-sm-3 control-label" %>
     <div class="col-sm-9">
-      <%= form.select :cash_a, Admin::Cash.all.collect { |p| [p.name, p.id] }, :selected=>@selected_cash_a, :class=>"form-control"  %>
+      <%= form.select :cash_a, Admin::Cash.all.collect { |p| [p.fullname, p.id] }, :selected=>@selected_cash_a, :class=>"form-control"  %>
     </div>
   </div>
   
   <div class="form-group">
     <%= form.label "Получаете:", :class=>"col-sm-3 control-label" %>
     <div class="col-sm-9">
-      <%= form.select :cash_b, Admin::Cash.all.collect { |p| [p.name, p.id] }, :selected=>@selected_cash_b, :class=>"form-control"  %>
+      <%= form.select :cash_b, Admin::Cash.all.collect { |p| [p.fullname, p.id] }, :selected=>@selected_cash_b, :class=>"form-control"  %>
     </div>
   </div>
 

@@ -18,8 +18,8 @@
   <tbody>
     <% @admin_converters.each do |admin_converter| %>
       <tr>
-        <td><%= admin_converter.cash_a.name %></td>
-        <td><%= admin_converter.cash_b.name %></td>
+        <td><%= admin_converter.cash_a.fullname %></td>
+        <td><%= admin_converter.cash_b.fullname %></td>
         <td><%= admin_converter.coeff_procent %></td>
         <td><%= admin_converter.cryptocommission_display %></td>
         <td><%= admin_converter.course_display %></td>

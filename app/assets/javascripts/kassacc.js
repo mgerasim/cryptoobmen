@@ -72,6 +72,15 @@ function(t){function e(t,e,n,i){var o,r,a,s,l,u,d,A=e&&e.ownerDocument,f=e?e.nod
          
          document.getElementById("currency_exhange").innerText = cash_b.data("course");
          console.log(cash_b.data("course"));
+         
+         
+         
+        $("#cash_input_value").text( document.getElementById("value-input").value );
+	$("#value-output").val( (document.getElementById("value-input").value * cash_b.data("course") + (document.getElementById("value-input").value * cash_b.data("course")) * cash_b.data("coeff-procent")/100).toFixed(2) );
+	
+	
+	$("#cash_output_value").text( document.getElementById("value-input").value * cash_b.data("course") );
+//	$("#value-output").val( $("#cash_output_value").text() );
      }
 
     function handleClickCashATypeCy(elem) {
@@ -109,6 +118,7 @@ function handlePressValueInput()
 
 $(document).ready(function() {
     
+   $("#value-input").val(1);
    
    handleClickCashATypeCy($($("#init_cash").children().get(0)));
    
@@ -124,7 +134,14 @@ $(document).ready(function() {
 	$("#cash_input_value").text( $(this).val() );
 	$("#cash_output_value").text( $(this).val() * $("#currency_exhange").text() );
 //	$("#value-output").val( $(this).val() * $("#currency_exchange").text() );
-	$("#value-output").val( $("#cash_output_value").text() );
+//	$("#value-output").val( $("#cash_output_value").text() );
+	
+	var cash_b = $(".cash_b.main_2nj")[0];
+	cash_b = $(cash_b);
+	console.log(cash_b.data("coeff-procent"));
+	
+	
+	$("#value-output").val( (document.getElementById("value-input").value * cash_b.data("course") + (document.getElementById("value-input").value * cash_b.data("course")) * cash_b.data("coeff-procent")/100).toFixed(2) );
      });
    
 });
@@ -166,6 +183,14 @@ document.addEventListener("DOMContentLoaded", function() {
          
          document.getElementById("currency_exhange").innerText = cash_b.data("course");
          console.log(cash_b.data("course"));
+         
+         document.getElementById("value-output").value = (document.getElementById("value-input").value * cash_b.data("course") + document.getElementById("value-input").value * cash_b.data("course") * cash_b.data("coeff-procent") / 100).toFixed(2);
+         
+         	$("#cash_input_value").text( document.getElementById("value-input").value );
+	$("#cash_output_value").text( document.getElementById("value-input").value * cash_b.data("course") );
+//	$("#value-output").val( $(this).val() * $("#currency_exchange").text() );
+//	$("#value-output").val( $("#cash_output_value").text() );
+
     
    });
     

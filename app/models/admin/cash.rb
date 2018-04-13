@@ -15,4 +15,9 @@ class Admin::Cash < ApplicationRecord
         end
     end
     
+    
+  def fullname
+    "#{self.name}(#{self.code})"
+  end 
+    
 end

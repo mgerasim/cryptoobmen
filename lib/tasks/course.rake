@@ -1,4 +1,5 @@
-
+require 'net/http'
+require 'addressable/uri'
 namespace :course do
   desc "TODO"
   task test: :environment do
@@ -20,6 +21,8 @@ namespace :course do
         puts url
         
         uri = URI.parse(url)
+        puts uri.host
+        puts uri.port
         https = Net::HTTP.new(uri.host, uri.port)
         https.use_ssl = true
 #	params = Addressable::URI.new

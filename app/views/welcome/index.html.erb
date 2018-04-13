@@ -112,7 +112,7 @@
                 
                   
     <% @cashes_a.each do |item| %>
-    	<div class="main_k0X cash_b" data-course="<%= item.course_display %>" data-body="3" data-cash_a=<%= item.cash_a.id %> data-output-currency="<%= item.cash_b.code %>" data-typecy="<%= item.cash_b.category %>" data-system-name="<%= item.cash_b.name %>" data-system-icon="<%= item.cash_b.icon %>" ><div class="main_1g8">                            <span class="<%= item.cash_b.icon %>"></span>
+    	<div class="main_k0X cash_b" data-coeff-procent="<%= item.coeff_procent %>" data-course="<%= item.course_display %>" data-body="3" data-cash_a=<%= item.cash_a.id %> data-output-currency="<%= item.cash_b.code %>" data-typecy="<%= item.cash_b.category %>" data-system-name="<%= item.cash_b.name %>" data-system-icon="<%= item.cash_b.icon %>" ><div class="main_1g8">                            <span class="<%= item.cash_b.icon %>"></span>
     	                        </div>
     	                        
     	                                                <div class="main_2-h"><%= item.cash_b.name %></div>
