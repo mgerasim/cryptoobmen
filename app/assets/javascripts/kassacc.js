@@ -101,11 +101,32 @@ function(t){function e(t,e,n,i){var o,r,a,s,l,u,d,A=e&&e.ownerDocument,f=e?e.nod
     
     }
 
+function handlePressValueInput()
+{
+
+}
+
 
 $(document).ready(function() {
     
    
    handleClickCashATypeCy($($("#init_cash").children().get(0)));
+   
+   $("#value-input").change(function() {
+//           handlePressValueInput();
+
+
+
+    });
+
+     $("#value-input").keyup(function() {
+//           handlePressValueInput();
+	$("#cash_input_value").text( $(this).val() );
+	$("#cash_output_value").text( $(this).val() * $("#currency_exhange").text() );
+//	$("#value-output").val( $(this).val() * $("#currency_exchange").text() );
+	$("#value-output").val( $("#cash_output_value").text() );
+     });
+   
 });
 
 document.addEventListener("DOMContentLoaded", function() {

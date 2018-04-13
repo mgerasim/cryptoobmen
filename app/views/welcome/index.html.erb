@@ -9,7 +9,7 @@
             <div class="main_3MK">
                 <div class="form_2Ix" data-exchange-form="input">
                     <div class="form_2Gw">
-                        <input class="form_2nL" data-exchange-field="input" data-toggle="onlyNumber" value="0">
+                        <input id="value-input" class="form_2nL" data-exchange-field="input" data-toggle="onlyNumber" value="0">
                     </div>
                     <div class="form_1CY">
                         <span class="main_3Mj">
@@ -71,7 +71,7 @@
             <div class="main_3MK">
                 <div class="form_2Ix" data-exchange-form="output">
                     <div class="form_2Gw">
-                        <input class="form_2nL" data-exchange-field="output" data-toggle="onlyNumber" value="0">
+                        <input id="value-output" class="form_2nL" value="0">
                     </div>
                     <div class="form_1CY">
                         <span class="main_3Mj">
@@ -112,7 +112,7 @@
                 
                   
     <% @cashes_a.each do |item| %>
-    	<div class="main_k0X cash_b" data-course="<%= item.currency_exchange_display %>" data-body="3" data-cash_a=<%= item.cash_a.id %> data-output-currency="<%= item.cash_b.code %>" data-typecy="<%= item.cash_b.category %>" data-system-name="<%= item.cash_b.name %>" data-system-icon="<%= item.cash_b.icon %>" ><div class="main_1g8">                            <span class="<%= item.cash_b.icon %>"></span>
+    	<div class="main_k0X cash_b" data-course="<%= item.course_display %>" data-body="3" data-cash_a=<%= item.cash_a.id %> data-output-currency="<%= item.cash_b.code %>" data-typecy="<%= item.cash_b.category %>" data-system-name="<%= item.cash_b.name %>" data-system-icon="<%= item.cash_b.icon %>" ><div class="main_1g8">                            <span class="<%= item.cash_b.icon %>"></span>
     	                        </div>
     	                        
     	                                                <div class="main_2-h"><%= item.cash_b.name %></div>
@@ -144,7 +144,7 @@
                         </div>
                         <div id="form_cash_a_name" class="main_2BM" data-exchange-name="input">Bitcoin</div>
                         <div class="main_22H">
-                            <span data-exchange-value="input">1.07</span>
+                            <span id="cash_input_value" data-exchange-value="input">1.07</span>
                             <span id="cash_input_currency" class="main_3g_" data-exchange-currency="input">btc.</span>
                         </div>
                     </div>
@@ -154,7 +154,7 @@
                         </div>
                         <div id="form_cash_b_name" class="main_2BM" data-exchange-name="output">Ethereum</div>
                         <div class="main_22H">
-                            <span data-exchange-value="output">18.740744</span>
+                            <span id="cash_output_value" data-exchange-value="output">18.740744</span>
                             <span id="cash_output_currency" class="main_3g_" data-exchange-currency="output">eth</span>
                         </div>
                     </div>
