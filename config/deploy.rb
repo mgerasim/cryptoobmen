@@ -1,4 +1,3 @@
-set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 
 # Change these
 server '194.58.111.187', roles: [:web, :app, :db], primary: true

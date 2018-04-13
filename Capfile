@@ -1,4 +1,3 @@
-require "whenever/capistrano"
 require 'capistrano/setup'
 require 'capistrano/deploy'
 		
