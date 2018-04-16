@@ -32,7 +32,7 @@ class Admin::ConvertersController < ApplicationController
     @admin_converter = Admin::Converter.new(admin_converter_params)
     @admin_converter.cash_a = Admin::Cash.find(params[:admin_converter][:cash_a])
     @admin_converter.cash_b = Admin::Cash.find(params[:admin_converter][:cash_b])
-    @admin_converter.cryptocommission = params[:admin_converter][:cryptocommission_str].to_f * 1000
+    @admin_converter.cryptocommission = params[:admin_converter][:cryptocommission_str].gsub(',','.').to_f * 1000
     respond_to do |format|
       if @admin_converter.save
       
@@ -51,7 +51,7 @@ class Admin::ConvertersController < ApplicationController
     respond_to do |format|
       @admin_converter.cash_a = Admin::Cash.find(params[:admin_converter][:cash_a])
       @admin_converter.cash_b = Admin::Cash.find(params[:admin_converter][:cash_b])
-      @admin_converter.cryptocommission = params[:admin_converter][:cryptocommission_str].to_f * 1000
+      @admin_converter.cryptocommission = params[:admin_converter][:cryptocommission_str].gsub(',','.').to_f * 1000
       if @admin_converter.update(admin_converter_params)
         format.html { redirect_to @admin_converter, notice: 'Converter was successfully updated.' }
         format.json { render :show, status: :ok, location: @admin_converter }
