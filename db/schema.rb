@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180410135024) do
+ActiveRecord::Schema.define(version: 20180418202039) do
 
   create_table "admin_cashes", force: :cascade do |t|
     t.string "code"
@@ -32,6 +32,28 @@ ActiveRecord::Schema.define(version: 20180410135024) do
     t.float "course"
     t.index ["cash_a_id"], name: "index_admin_converters_on_cash_a_id"
     t.index ["cash_b_id"], name: "index_admin_converters_on_cash_b_id"
+  end
+
+  create_table "banks", force: :cascade do |t|
+    t.string "name"
+    t.integer "currency_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["currency_id"], name: "index_banks_on_currency_id"
+  end
+
+  create_table "cryptocurrencies", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "currencies", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

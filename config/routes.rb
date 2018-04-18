@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :banks
+  resources :cryptocurrencies
+  resources :currencies
   namespace :admin do
     resources :converters
   end

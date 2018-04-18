@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Валюта</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Короткое наименование</th>
+      <th>Полное наименование</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @currencies.each do |currency| %>
+      <tr>
+        <td><%= currency.code %></td>
+        <td><%= currency.name %></td>
+        <td><%= link_to 'Показать', currency %></td>
+        <td><%= link_to 'Редактировать', edit_currency_path(currency) %></td>
+        <td><%= link_to 'Удалить', currency, method: :delete, data: { confirm: 'Вы действительно хотите удалить?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Добавить', new_currency_path %>
