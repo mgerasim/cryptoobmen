@@ -1,9 +1,13 @@
 class AddLogoToBanks < ActiveRecord::Migration[5.1]
-  def change
-    add_column :banks, :logo, :attachment
-    add_column :banks, :logo_file_name, :string
-    add_column :banks, :logo_content_type, :string
-    add_column :banks, :logo_file_size, :string
-    add_column :banks, :logo_updated_at, :string
+
+  def self.up
+    change_table :banks do |t|
+      t.attachment :logo
+    end
   end
+
+  def self.down
+    remove_attachment :currencies, :logo
+  end
+
 end
