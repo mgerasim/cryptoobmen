@@ -15,12 +15,10 @@ class BanksController < ApplicationController
   # GET /banks/new
   def new
     @bank = Bank.new
-    @selected_currency = Currency.first.id
   end
 
   # GET /banks/1/edit
   def edit
-    @selected_currency = @bank.currency.id
   end
 
   # POST /banks
@@ -71,6 +69,6 @@ class BanksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bank_params
-      params.require(:bank).permit(:name, :currency_id)
+      params.require(:bank).permit(:name, :logo, currency_ids:[])
     end
 end

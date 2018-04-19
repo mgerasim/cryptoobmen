@@ -1,14 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Наименование:</strong>
   <%= @bank.name %>
 </p>
 
 <p>
-  <strong>Currency:</strong>
-  <%= @bank.currency %>
+  <strong>Валюта:</strong>
+  <%= @bank._currencies %>
 </p>
 
-<%= link_to 'Edit', edit_bank_path(@bank) %> |
-<%= link_to 'Back', banks_path %>
+<p>
+  <strong>Логотип:</strong>
+  <%= link_to image_tag(@bank.logo.url(:med)), @bank.logo.url %>
+ </p>
+
+<%= link_to 'Редактировать', edit_bank_path(@bank) %> |
+<%= link_to 'Назад', banks_path %>

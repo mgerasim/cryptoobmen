@@ -1,4 +1,4 @@
-<%= form_with(model: bank, local: true) do |form| %>
+<%= form_with(model: bank, local: true, html: { multipart: true } ) do |form| %>
   <% if bank.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(bank.errors.count, "error") %> prohibited this bank from being saved:</h2>
@@ -12,17 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label "Наименование:" %>
     <%= form.text_field :name, id: :bank_name %>
   </div>
 
   <div class="field">
-    <%= form.label :currency_id %>
-    <%= form.text_field :currency_id, id: :bank_currency_id %>
-    <%= form.select :currency_id, Currency.all.collect { |p| [p.name, p.id] }, :selected=>@selected_currency, :class=>"form-control"  %>
+    <%= form.label "Валюта:" %>
+    <%= form.collection_check_boxes :currency_ids, Currency.all, :id, :name, :class=>"form-control" %>
+  </div>
+  
+  <div class="field">
+    <%= form.label "Логотип:" %>
+    <%= form.file_field :logo, id: :bank_logo %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Сохранить" %>
   </div>
 <% end %>

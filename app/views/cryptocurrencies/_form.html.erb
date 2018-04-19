@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :code %>
+    <%= form.label "Код:" %>
     <%= form.text_field :code, id: :cryptocurrency_code %>
   </div>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label "Наименование:" %>
     <%= form.text_field :name, id: :cryptocurrency_name %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Сохранить" %>
   </div>
 <% end %>

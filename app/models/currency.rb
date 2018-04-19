@@ -1,3 +1,3 @@
 class Currency < ApplicationRecord
-    has_many :banks
+    has_and_belongs_to_many :banks
 end
