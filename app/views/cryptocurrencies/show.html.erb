@@ -10,5 +10,10 @@
   <%= @cryptocurrency.name %>
 </p>
 
+<p>
+  <strong>Логотип:</strong>
+  <%= image_tag @cryptocurrency.logo.url(:med) %>
+</p>
+
 <%= link_to 'Редактировать', edit_cryptocurrency_path(@cryptocurrency) %> |
 <%= link_to 'Назад', cryptocurrencies_path %>

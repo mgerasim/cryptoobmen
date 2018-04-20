@@ -5,6 +5,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>Логотип</th>
       <th>Код</th>
       <th>Наименование</th>
       <th colspan="3"></th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @cryptocurrencies.each do |cryptocurrency| %>
       <tr>
+        <td><%= image_tag cryptocurrency.logo.url(:med) %></td>
         <td><%= cryptocurrency.code %></td>
         <td><%= cryptocurrency.name %></td>
         <td><%= link_to 'Показать', cryptocurrency %></td>
