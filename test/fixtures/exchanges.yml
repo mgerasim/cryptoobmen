@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  currency: one
+  cryptocurrency: one
+  course: 9.99
+  burse: 1
+
+two:
+  currency: two
+  cryptocurrency: two
+  course: 9.99
+  burse: 1

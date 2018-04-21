@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Обмен</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Криптовалюта</th>
+      <th>Валюта</th>
+      <th>Курс</th>
+      <th>Биржа</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @exchanges.each do |exchange| %>
+      <tr>
+        <td>
+    	    <%= image_tag exchange.cryptocurrency.logo.url(:med) %>
+    	    <%= exchange.cryptocurrency.fullname %>
+    	</td>
+        <td>
+    	    <%= image_tag exchange.currency.logo.url(:med) %>
+    	    <%= exchange.currency.fullname %>
+        </td>
+        <td><%= exchange.course %></td>
+        <td><%= exchange.burse %></td>
+        <td><%= link_to 'Показать', exchange %></td>
+        <td><%= link_to 'Редактировать', edit_exchange_path(exchange) %></td>
+        <td><%= link_to 'Удалить', exchange, method: :delete, data: { confirm: 'Вы действительно хотите удалить?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Добавить', new_exchange_path %>

@@ -6,4 +6,8 @@ class Currency < ApplicationRecord
     # Validate filename
     validates_attachment_file_name :logo, matches: [/png\Z/, /jpe?g\Z/, /ico\Z/]
 
+    def fullname
+        self.name + '(' + self.code + ')'
+    end
+
 end

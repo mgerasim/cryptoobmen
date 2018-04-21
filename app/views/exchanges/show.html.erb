@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Криптовалюта:</strong>
+  <%= image_tag @exchange.cryptocurrency.logo.url(:med) %>
+  <%= @exchange.cryptocurrency.fullname %>
+</p>
+
+<p>
+  <strong>Валюта:</strong>
+  <%= image_tag @exchange.currency.logo.url(:med) %>
+  <%= @exchange.currency.fullname %>
+</p>
+
+<p>
+  <strong>Курс:</strong>
+  <%= @exchange.course_display %>
+</p>
+
+<p>
+  <strong>Биржа:</strong>
+  <%= @exchange.burse_display %>
+</p>
+
+<%= link_to 'Редактировать', edit_exchange_path(@exchange) %> |
+<%= link_to 'Назад', exchanges_path %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :exchanges
   resources :banks
   resources :cryptocurrencies
   resources :currencies

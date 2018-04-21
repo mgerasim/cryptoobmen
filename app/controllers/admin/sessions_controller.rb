@@ -14,7 +14,7 @@ class Admin::SessionsController < ApplicationController
             Rails.logger.error(session[:logged_in])
             Rails.logger.error(logged_in?)
             flash[:success] = "Добро пожаловать в административную часть!"
-            redirect_to admin_converters_path
+            redirect_to exchanges_path
         else
     	    flash.now[:danger] = 'Не верно указан пароль' # Not quite rig
     	    render 'new'
