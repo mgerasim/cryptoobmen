@@ -12,22 +12,36 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.label :cryptocurrency_id, "Криптовалюта:", :class => "col-sm-3 col-sm-label" %>
+    <%= form.label :cryptocurrency_id, "Криптовалюта:", :class => "col-sm-3 control-label" %>
     <div class="col-sm-9">
 	<%= form.select :cryptocurrency_id, options_for_select(Cryptocurrency.all.collect { |p| [p.fullname, p.id] }, form.object.cryptocurrency_id), {}, {:class => 'form-control',  id: :exchange_cryptocurrency} %>
     </div>
   </div>
 
   <div class="form-group">    
-    <%= form.label :currency_id, "Валюта:", :class => "col-sm-3 col-sm-label" %>
+    <%= form.label :currency_id, "Валюта:", :class => "col-sm-3 control-label" %>
     <div class="col-sm-9">
         <%= form.select :currency_id, options_for_select(Currency.all.collect { |p| [p.fullname, p.id] }, form.object.currency_id), {}, {:class => 'form-control',  id: :exchange_currency} %>
     </div>
   </div>
 
+  <div class="form-group">
+    <%= form.label "Коффициент конвертации (%):", :class=>"col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <%= form.number_field :coeff, id: :exchange_coeff, :class=>"form-control"  %>
+    </div>
+  </div>
 
   <div class="form-group">
-    <%= form.label :burse, "Биржа:", :class => "col-sm-3 col-sm-label" %>
+    <%= form.label "Комиссия в криптовалюте:", :class=>"col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <%= form.text_field :coeffburse, id: :exchange_coeffburse, :class=>"form-control"  %>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <%= form.label :burse, "Биржа:", :class => "col-sm-3 control-label" %>
     <div class="col-sm-9">
         <%= form.select :burse, options_for_select([['exmo.me', 1], ['cex.io', 2] ], form.object.burse), {}, {:class => 'form-control',  id: :exchange_burse} %>
     </div>

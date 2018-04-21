@@ -25,6 +25,7 @@ class ExchangesController < ApplicationController
   # POST /exchanges.json
   def create
     @exchange = Exchange.new(exchange_params)
+    @exchange.coeffburse = params[:exchange][:coeffburse].gsub(',','.').to_f
 
     respond_to do |format|
       if @exchange.save
@@ -40,6 +41,7 @@ class ExchangesController < ApplicationController
   # PATCH/PUT /exchanges/1
   # PATCH/PUT /exchanges/1.json
   def update
+    @exchange.coeffburse = params[:exchange][:coeffburse].gsub(',','.').to_f
     respond_to do |format|
       if @exchange.update(exchange_params)
         format.html { redirect_to @exchange, notice: 'Exchange was successfully updated.' }
@@ -69,6 +71,6 @@ class ExchangesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exchange_params
-      params.require(:exchange).permit(:currency_id, :cryptocurrency_id, :course, :burse)
+      params.require(:exchange).permit(:currency_id, :cryptocurrency_id, :course, :burse, :coeff)
     end
 end
