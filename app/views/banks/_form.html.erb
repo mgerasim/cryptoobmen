@@ -1,4 +1,4 @@
-<%= form_with(model: bank, local: true, html: { multipart: true } ) do |form| %>
+<%= form_with(model: bank, local: true, html: { multipart: true }, :class => "form-horizontal" ) do |form| %>
   <% if bank.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(bank.errors.count, "error") %> prohibited this bank from being saved:</h2>
@@ -11,22 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label "Наименование:" %>
-    <%= form.text_field :name, id: :bank_name %>
+  <div class="form-group">
+    <%= form.label "Наименование:", :class => "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+        <%= form.text_field :name, id: :bank_name, :class => "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label "Валюта:" %>
-    <%= form.collection_check_boxes :currency_ids, Currency.all, :id, :name, :class=>"form-control" %>
+  <div class="form-group">
+    <%= form.label "Валюта:", :class => "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+        <%= form.collection_check_boxes :currency_ids, Currency.all, :id, :name, :class=>"form-control" %>
+    </div>
   </div>
   
-  <div class="field">
-    <%= form.label "Логотип:" %>
-    <%= form.file_field :logo, id: :bank_logo %>
+  <div class="form-group">
+    <%= form.label "Логотип:", :class => "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+        <%= form.file_field :logo, id: :bank_logo %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit "Сохранить" %>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+        <%= form.submit "Сохранить", :class => "btn btn-default" %>
+    </div>
   </div>
 <% end %>

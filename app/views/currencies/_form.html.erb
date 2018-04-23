@@ -1,4 +1,4 @@
-<%= form_with(model: currency, local: true) do |form| %>
+<%= form_with(model: currency, local: true, :class => "form-horizontal") do |form| %>
   <% if currency.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(currency.errors.count, "error") %> prohibited this currency from being saved:</h2>
@@ -11,23 +11,31 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label "Короткое наименование:" %>
-    <%= form.text_field :code, id: :currency_code %>
+  <div class="form-group">
+    <%= form.label "Краткое наименование:", :class => "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+        <%= form.text_field :code, id: :currency_code, :class => "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label "Полное наименование:" %>
-    <%= form.text_field :name, id: :currency_name %>
+  <div class="form-group">
+    <%= form.label "Полное наименование:", :class => "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+        <%= form.text_field :name, id: :currency_name, :class => "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label "Логотип:" %>
-    <%= form.file_field :logo, id: :currency_logo %>
+  <div class="form-group">
+    <%= form.label "Логотип:", :class => "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+        <%= form.file_field :logo, id: :currency_logo %>
+    </div>
   </div>
   
 
-  <div class="actions">
-    <%= form.submit "Сохранить", :class => "btn btn-primary" %>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+        <%= form.submit "Сохранить", :class => "btn btn-primary" %>
+    </div>
   </div>
 <% end %>

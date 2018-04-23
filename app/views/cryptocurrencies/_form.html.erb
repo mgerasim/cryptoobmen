@@ -1,4 +1,4 @@
-<%= form_with(model: cryptocurrency, local: true) do |form| %>
+<%= form_with(model: cryptocurrency, local: true, :class => "form-horizontal") do |form| %>
   <% if cryptocurrency.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(cryptocurrency.errors.count, "error") %> prohibited this cryptocurrency from being saved:</h2>
@@ -11,22 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label "Код:" %>
-    <%= form.text_field :code, id: :cryptocurrency_code %>
+  <div class="form-group">
+    <%= form.label "Код:", :class => "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+        <%= form.text_field :code, id: :cryptocurrency_code, :class => "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label "Наименование:" %>
-    <%= form.text_field :name, id: :cryptocurrency_name %>
+  <div class="form-group">
+    <%= form.label "Наименование:", :class => "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+        <%= form.text_field :name, id: :cryptocurrency_name, :class => "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label "Логотип:" %>
-    <%= form.file_field :logo, id: :cryptocurrency_logo %>
+  <div class="form-group">
+    <%= form.label "Логотип:", :class => "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+        <%= form.file_field :logo, id: :cryptocurrency_logo %>
+    </div>
   </div>
   
-  <div class="actions">
-    <%= form.submit "Сохранить" %>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+        <%= form.submit "Сохранить" %>
+    </div>
   </div>
 <% end %>
