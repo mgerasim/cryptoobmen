@@ -44,14 +44,27 @@
                 </p>
                 
                 <div id="init_cash" class="main_2Lu step_ps_list"> 
-                  
+    
+                <% @exchanges.select(:cryptocurrency_id).distinct.each do |item| %>
+            	    <div class="main_k0X cash_a"  data-cash="<%= item.cryptocurrency.id %>" data-input-currency="<%= item.cryptocurrency.code %>" data-body="3" data-typecy="3" data-system-name="<%= item.cryptocurrency.name %>" data-system-icon="">
+            		<div class="main_1g8">
+            		  <span>  <%= image_tag item.cryptocurrency.logo.url(:small) %></span>
+            		</div>
+            		<div class="main_2-h"><%= item.cryptocurrency.name %></div>
+            	    </div>
+                <% end %>
+                
+<!--
     <% @cashes_a.select(:cash_a_id).distinct.each do |item| %>
-    	<div class="main_k0X cash_a" data-cash="<%= item.cash_a.id %>" data-input-currency="<%= item.cash_a.code %>" data-body="3" data-typecy="<%= item.cash_a.category %>" data-system-name="<%= item.cash_a.name %>" data-system-icon="<%= item.cash_a.icon %>"><div class="main_1g8">                            <span class="<%= item.cash_a.icon %>"></span>
-    	                        </div>
+    	<div class="main_k0X cash_a" data-cash="<%= item.cash_a.id %>" data-input-currency="<%= item.cash_a.code %>" data-body="3" data-typecy="<%= item.cash_a.category %>" data-system-name="<%= item.cash_a.name %>" data-system-icon="<%= item.cash_a.icon %>">
+    	    <div class="main_1g8">                            
+    		<span class="<%= item.cash_a.icon %>"></span>
+    	    </div>
     	                        
-    	                                                <div class="main_2-h"><%= item.cash_a.name %></div>
-    	                                                                    </div>
+    	    <div class="main_2-h"><%= item.cash_a.name %></div>
+    	</div>
     <% end %>
+    -->
                 </div>
                 
 
