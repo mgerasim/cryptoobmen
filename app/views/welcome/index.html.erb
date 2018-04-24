@@ -45,6 +45,16 @@
                 
                 <div id="init_cash" class="main_2Lu step_ps_list"> 
     
+		<% @exchanges.select(:currency_id).distinct.each do |item| %>
+		    <% item.currency.banks.each do |bank| %>
+		        <div class="main_k0X cash_a"  data-body="3" data-typecy="3" data-system-icon="">
+            		    <div class="main_1g8">
+            		      <span>  <%= image_tag bank.logo.url(:small) %></span>
+            		    </div>
+            		    <div class="main_2-h"><%= bank.name + ' ' + item.currency.code %></div>
+            	        </div>
+		    <% end %>
+		<% end %>
                 <% @exchanges.select(:cryptocurrency_id).distinct.each do |item| %>
             	    <div class="main_k0X cash_a"  data-cash="<%= item.cryptocurrency.id %>" data-input-currency="<%= item.cryptocurrency.code %>" data-body="3" data-typecy="3" data-system-name="<%= item.cryptocurrency.name %>" data-system-icon="">
             		<div class="main_1g8">
