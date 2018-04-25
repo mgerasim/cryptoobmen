@@ -13,7 +13,7 @@
                     </div>
                     <div class="form_1CY">
                         <span class="main_3Mj">
-                            <span id="form_cash_a_icon_2" data-exchange-icon="input" class="iconpay-bitcoin"></span>
+                            <span data-exchange-icon="input" ></span>
                         </span>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
     
 		<% @exchanges.select(:currency_id).distinct.each do |item| %>
 		    <% item.currency.banks.each do |bank| %>
-		        <div class="main_k0X cash_a"  data-body="3" data-typecy="3" data-system-icon="">
+		        <div class="main_k0X"  data-exchange-type="input" data-currency-code="<%= item.currency.code %>" data-body="3" data-typecy="3" >
             		    <div class="main_1g8">
             		      <span>  <%= image_tag bank.logo.url(:small) %></span>
             		    </div>
@@ -56,7 +56,7 @@
 		    <% end %>
 		<% end %>
                 <% @exchanges.select(:cryptocurrency_id).distinct.each do |item| %>
-            	    <div class="main_k0X cash_a"  data-cash="<%= item.cryptocurrency.id %>" data-input-currency="<%= item.cryptocurrency.code %>" data-body="3" data-typecy="3" data-system-name="<%= item.cryptocurrency.name %>" data-system-icon="">
+            	    <div class="main_k0X"  data-exchange-type="input" data-cash="<%= item.cryptocurrency.id %>" data-currency-code="<%= item.cryptocurrency.code %>" data-body="3" data-typecy="3" data-system-name="<%= item.cryptocurrency.name %>">
             		<div class="main_1g8">
             		  <span>  <%= image_tag item.cryptocurrency.logo.url(:small) %></span>
             		</div>
@@ -98,13 +98,13 @@
                     </div>
                     <div class="form_1CY">
                         <span class="main_3Mj">
-                            <span id="form_cash_b_icon_2" data-exchange-icon="output" class="iconpay-ethereum"></span>
+                            <span data-exchange-icon="output"></span>
                         </span>
                     </div>
                 </div>
             </div>
             <div class="main_Uu_" data-exchange-toggle="select"><span class="main_11I">
-  <span class="iconpay-ethereum"></span>
+  <span></span>
 </span> Ethereum</div>
             <div class="main_rpT">
               <div class="main_2HO">
@@ -132,8 +132,27 @@
 
 
                 <div id="cashes_to" class="main_2Lu step_ps_list"> 
-                
-                  
+    
+    
+		<% @exchanges.select(:currency_id).distinct.each do |item| %>
+		    <% item.currency.banks.each do |bank| %>
+		        <div class="main_k0X"  data-exchange-type="output" data-currency-code="<%= item.currency.code %>" data-body="3" data-typecy="3" >
+            		    <div class="main_1g8">
+            		      <span>  <%= image_tag bank.logo.url(:small) %></span>
+            		    </div>
+            		    <div class="main_2-h"><%= bank.name + ' ' + item.currency.code %></div>
+            	        </div>
+		    <% end %>
+		<% end %>
+                <% @exchanges.select(:cryptocurrency_id).distinct.each do |item| %>
+            	    <div class="main_k0X"  data-exchange-type="output" data-cash="<%= item.cryptocurrency.id %>" data-currency-code="<%= item.cryptocurrency.code %>" data-body="3" data-typecy="3" data-system-name="<%= item.cryptocurrency.name %>">
+            		<div class="main_1g8">
+            		  <span>  <%= image_tag item.cryptocurrency.logo.url(:small) %></span>
+            		</div>
+            		<div class="main_2-h"><%= item.cryptocurrency.name %></div>
+            	    </div>
+                <% end %>            
+    <!--              
     <% @cashes_a.each do |item| %>
     	<div class="main_k0X cash_b" data-coeff-procent="<%= item.coeff_procent %>" data-course="<%= item.course_display %>" data-body="3" data-cash_a=<%= item.cash_a.id %> data-output-currency="<%= item.cash_b.code %>" data-typecy="<%= item.cash_b.category %>" data-system-name="<%= item.cash_b.name %>" data-system-icon="<%= item.cash_b.icon %>" ><div class="main_1g8">                            <span class="<%= item.cash_b.icon %>"></span>
     	                        </div>
@@ -141,6 +160,7 @@
     	                                                <div class="main_2-h"><%= item.cash_b.name %></div>
     	                                                                    </div>
     <% end %>
+    -->
                 </div>
 
 
@@ -156,29 +176,29 @@
                 <p class="main_2fW" data-course="container">
                   Обмен по курсу:
                   <span data-course="input-value">1</span>
-                  <span id="input-currency" data-course="input-currency">btc.</span>
+                  <span id="input-currency" data-exchange-currency="input">btc.</span>
                    = <span id="currency_exhange" data-course="output-value">17.515</span>
-                  <span id="output-currency" data-course="output-currency">eth</span>
+                  <span id="output-currency" data-exchange-currency="output">eth</span>
                 </p>
                 <div class="main_1I3">
                     <div class="main_3LV">
-                        <div class="main_2tS">
-                            <span id="form_cash_a_icon" class="iconpay-bitcoin" data-exchange-icon="input"></span>
+                        <div class="main_1g8">
+                            <span data-exchange-icon="input"></span>
                         </div>
                         <div id="form_cash_a_name" class="main_2BM" data-exchange-name="input">Bitcoin</div>
                         <div class="main_22H">
-                            <span id="cash_input_value" data-exchange-value="input">1.07</span>
-                            <span id="cash_input_currency" class="main_3g_" data-exchange-currency="input">btc.</span>
+                            <span data-exchange-value="input">1.07</span>
+                            <span class="main_3g_" data-exchange-currency="input">btc.</span>
                         </div>
                     </div>
                     <div class="main_3LV">
                         <div class="main_2tS">
-                            <span id="form_cash_b_icon" class="iconpay-ethereum" data-exchange-icon="output"></span>
+                            <span  data-exchange-icon="output"></span>
                         </div>
                         <div id="form_cash_b_name" class="main_2BM" data-exchange-name="output">Ethereum</div>
                         <div class="main_22H">
-                            <span id="cash_output_value" data-exchange-value="output">18.740744</span>
-                            <span id="cash_output_currency" class="main_3g_" data-exchange-currency="output">eth</span>
+                            <span  data-exchange-value="output">18.740744</span>
+                            <span class="main_3g_" data-exchange-currency="output">eth</span>
                         </div>
                     </div>
                 </div>
@@ -223,7 +243,7 @@
                     </label>
                     <div class="form_qzZ">
                         <span class="main_8sl">
-                            <span class="iconpay-ethereum" data-exchange-icon="output"></span>
+                            <span data-exchange-icon="output"></span>
                         </span>
                     </div>
                 </div>
