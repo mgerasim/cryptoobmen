@@ -58,12 +58,70 @@ function UpdateInput(InputCurrency) {
     icon.children().remove();
     
     var copy = $(img).clone();
+    copy.attr('src', InputCurrency.data('logo'));
     
     icon.append(copy);
     
     code = InputCurrency.data('currency-code');
     course = $(document).find('[data-exchange-currency="input"]');
     $(course).text(code);
+    system = $(document).find('[data-exchange-name="input"]');
+    $(system).text( InputCurrency.data('system-name') );
+    
+    if ( typeof InputCurrency.data("cryptocurrency") !== 'undefined' ) 
+    {
+       var cryptocurrency = InputCurrency.data("cryptocurrency");
+       console.log(cryptocurrency);
+       var isShowed = 0;
+       $("#cashes_to").children().each(function(i, e) {
+    	   $(e).removeClass('main_2nj');
+    	   $(e).addClass('main_k0X');
+    	   
+           if ($(e).data("cryptocurrency") == cryptocurrency && typeof $(e).data("bank") !== 'undefined' ) 
+           {
+        	$(e).show();
+        	if (isShowed == 0) {
+        	    isShowed = 1;
+        	    $(e).removeClass('main_k0X');
+        	    $(e).addClass('main_2nj');
+        	    
+        	    UpdateOutput( $(e) );
+        	}
+           }
+           else
+           {
+        	$(e).hide();
+           }
+       });
+    }
+    else
+    {
+//    if (InputCurrency.data("bank") !== 'undefined' )
+
+	var currency = InputCurrency.data("currency");
+	
+        var isShowed = 0;
+       $("#cashes_to").children().each(function(i, e) {
+    	   $(e).removeClass('main_2nj');
+    	   $(e).addClass('main_k0X');
+    	   
+           if ( $(e).data("currency") == currency && typeof $(e).data("bank") == 'undefined') 
+           {
+        	$(e).show();
+        	if (isShowed == 0) {
+        	    isShowed = 1;
+        	    $(e).removeClass('main_k0X');
+        	    $(e).addClass('main_2nj');
+        	    
+        	    UpdateOutput( $(e) );
+        	}
+           }
+           else
+           {
+        	$(e).hide();
+           }
+       });
+    }
 }
 
 
@@ -76,14 +134,43 @@ function UpdateOutput(Currency) {
     icon.children().remove();
     
     var copy = $(img).clone();
+    copy.attr('src', Currency.data('logo'));
     
     icon.append(copy);
     
     code = Currency.data('currency-code');
     course = $(document).find('[data-exchange-currency="output"]');
     $(course).text(code);
+    
+    system = $(document).find('[data-exchange-name="output"]');
+    $(system).text( Currency.data('system-name') );
+    
+    $('#value-output').val( Currency.data('course') );
+    
+        
+    $("#cashes_to").children().each(function(i, e) {
+    	   $(e).removeClass('main_2nj');
+    	   $(e).addClass('main_k0X');
+    	});
+    	
+	$(Currency).removeClass('main_k0X');
+	$(Currency).addClass('main_2nj');
+    
+
 }
 
+function InitOutput() {
+    var column = $(document).find('[data-exchange-column="output"]');
+    var block = column.children().get(0);
+    var list = $(block).children().get(3);
+    var level1 = $(list).children().get(0);
+    var level2 = $(level1).children().get(2);
+    var level3 = $(level2).children().get(0);
+    var init = $(level3);
+    
+    UpdateOutput(init);
+
+}
 
 $(document).ready(function() {
     var column = $(document).find('[data-exchange-column="input"]');
@@ -102,6 +189,12 @@ $(document).ready(function() {
     $(document).find('[data-exchange-type="output"]').click(function() {
 	UpdateOutput($(this));
     });
+    
+    $(".exchange-output").click(function() {
+	UpdateOutput($(this));
+    });
+    
+    InitOutput();
 });
     
 
