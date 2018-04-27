@@ -135,7 +135,7 @@
                 
             <% @exchanges.each do |exchange| %>
                 <% exchange.currency.banks.each do |bank| %>
-            	    <div class="main_k0X exchange-output"  data-exchange-type="output" data-currency-code="<%= exchange.currency.code %>" data-cryptocurrency="<%= exchange.cryptocurrency.id%>"  data-currency="<%= exchange.currency.id%>" data-exchange="<%= exchange.id %>" data-bank="<%= bank.id %>" data-system-name="<%= bank.name %>"  data-body="3" data-typecy="3" data-logo="<%= bank.logo.url(:med) %>" data-course="<%= exchange.course %>">
+            	    <div class="main_k0X exchange-output"  data-exchange-type="output" data-currency-code="<%= exchange.currency.code %>" data-cryptocurrency="<%= exchange.cryptocurrency.id%>"  data-currency="<%= exchange.currency.id%>" data-exchange="<%= exchange.id %>" data-bank="<%= bank.id %>" data-system-name="<%= bank.name %>"  data-body="3" data-typecy="3" data-logo="<%= bank.logo.url(:med) %>" data-course-output="<%= exchange.converter %>" data-course-input="1">
             		    <div class="main_1g8">
             		      <span>  <%= image_tag bank.logo.url(:small) %></span>
             		    </div>
@@ -143,7 +143,7 @@
             	        </div>            	        
             	<% end %>
             	
-            	<div class="main_k0X exchange-output"  data-exchange-type="output" data-cryptocurrency="<%= exchange.cryptocurrency.id %>" data-currency="<%= exchange.currency.id%>" data-exchange="<%= exchange.id %>" data-currency-code="<%= exchange.cryptocurrency.code %>" data-body="3" data-typecy="3" data-system-name="<%= exchange.cryptocurrency.name %>" data-logo="<%= exchange.cryptocurrency.logo.url(:med) %>" data-course="<%= exchange.course %>" >
+            	<div class="main_k0X exchange-output"  data-exchange-type="output" data-cryptocurrency="<%= exchange.cryptocurrency.id %>" data-currency="<%= exchange.currency.id%>" data-exchange="<%= exchange.id %>" data-currency-code="<%= exchange.cryptocurrency.code %>" data-body="3" data-typecy="3" data-system-name="<%= exchange.cryptocurrency.name %>" data-logo="<%= exchange.cryptocurrency.logo.url(:med) %>" data-course-input="<%= exchange.converter_crypto %>" data-course-output="1">
             		<div class="main_1g8">
             		  <span>  <%= image_tag exchange.cryptocurrency.logo.url(:small) %></span>
             		</div>

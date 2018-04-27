@@ -145,8 +145,18 @@ function UpdateOutput(Currency) {
     system = $(document).find('[data-exchange-name="output"]');
     $(system).text( Currency.data('system-name') );
     
-    $('#value-output').val( Currency.data('course') );
+    $('#value-input').val( parseFloat(Currency.data(  'course-input')).toFixed(2) );
+    $('#value-output').val( parseFloat(Currency.data('course-output')).toFixed(2) );
     
+    span_course_input = $(document).find('[data-course="input-value"]');
+    $(span_course_input).text( parseFloat(Currency.data('course-input')).toFixed(2) );
+    $(document).find('[data-exchange-value="input"]').text( parseFloat(Currency.data('course-input')).toFixed(2) );
+    
+    span_course_output = $(document).find('[data-course="output-value"]');
+    $(span_course_output).text( parseFloat(Currency.data('course-output')).toFixed(2) );
+    $(document).find('[data-exchange-value="output"]').text( parseFloat(Currency.data('course-output')).toFixed(2) );    
+        
+    $(document).find('[data-exchange-form-label="output-account"]').text( Currency.data('system-name')  );
         
     $("#cashes_to").children().each(function(i, e) {
     	   $(e).removeClass('main_2nj');
