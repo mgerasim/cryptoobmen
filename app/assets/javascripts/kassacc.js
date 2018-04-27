@@ -149,10 +149,12 @@ function UpdateOutput(Currency) {
     $('#value-output').val( parseFloat(Currency.data('course-output')).toFixed(2) );
     
     span_course_input = $(document).find('[data-course="input-value"]');
+    g_course_input = parseFloat(Currency.data('course-input'));
     $(span_course_input).text( parseFloat(Currency.data('course-input')).toFixed(2) );
     $(document).find('[data-exchange-value="input"]').text( parseFloat(Currency.data('course-input')).toFixed(2) );
     
     span_course_output = $(document).find('[data-course="output-value"]');
+    g_course_output = parseFloat(Currency.data('course-output'));
     $(span_course_output).text( parseFloat(Currency.data('course-output')).toFixed(2) );
     $(document).find('[data-exchange-value="output"]').text( parseFloat(Currency.data('course-output')).toFixed(2) );    
         
@@ -288,46 +290,66 @@ function handlePressValueInput()
 
 }
 
+var g_course_input = 0.0;
+var g_course_output = 0.0;
+
 
 $(document).ready(function() {
     
-   $("#value-input").val(1);
+//   $("#value-input").val(1);
    
-   handleClickCashATypeCy($($("#init_cash").children().get(0)));
+//   handleClickCashATypeCy($($("#init_cash").children().get(0)));
    
    $("#value-input").change(function() {
 //           handlePressValueInput();
+
+    console.log("D");
+
 
 
 
     });
 
-     $("#value-input").keyup(function() {
-//           handlePressValueInput();
-	$("#cash_input_value").text( $(this).val() );
-	$("#cash_output_value").text( $(this).val() * $("#currency_exhange").text() );
-//	$("#value-output").val( $(this).val() * $("#currency_exchange").text() );
-//	$("#value-output").val( $("#cash_output_value").text() );
+     $("#value-input").keyup(function(e) {
+     
+        $(document).find('[data-exchange-value="input"]').text( $(this).val() );
+        $(document).find('[data-exchange-value="output"]').text( $(this).val() * parseFloat($("#currency_exchange").text()) );
+        
+        
+        
+//	$("#cash_input_value").text( $(this).val() );
+//	$("#cash_output_value").text( $(this).val() * $("#currency_exhange").text() );
 	
-	var cash_b = $(".cash_b.main_2nj")[0];
-	cash_b = $(cash_b);
-	console.log(cash_b.data("coeff-procent"));
 	
 	
-	$("#value-output").val( (document.getElementById("value-input").value * cash_b.data("course") + (document.getElementById("value-input").value * cash_b.data("course")) * cash_b.data("coeff-procent")/100).toFixed(2) );
+	var course_input = parseFloat($('#course-input-value').text());
+	
+	
+	console.log(g_course_output);
+	
+	$("#value-output").val( (parseFloat($(this).val()) / course_input *  g_course_output).toFixed(3)  );
+        $(document).find('[data-exchange-value="output"]').text( $("#value-output").val() );
+////	$("#value-output").val( $("#cash_output_value").text() );
+	
+//	var cash_b = $(".cash_b.main_2nj")[0];
+//	cash_b = $(cash_b);
+//	console.log(cash_b.data("coeff-procent"));
+	
+	
+//	$("#value-output").val( (document.getElementById("value-input").value * cash_b.data("course") + (document.getElementById("value-input").value * cash_b.data("course")) * cash_b.data("coeff-procent")/100).toFixed(2) );
      });
    
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoadedee", function() {
 
     
    $(".cash_a").click(function() {
-       handleClickCashATypeCy($(this));
+//       handleClickCashATypeCy($(this));
    });
    
    
-   $(".cash_b").click(function() {
+   $(".Xcash_b").click(function() {
 	$("#cashes_to").children().each(function(i, e) {
     	   $(e).removeClass('main_2nj');
     	   $(e).addClass('main_k0X');
