@@ -303,7 +303,7 @@ $(document).ready(function() {
    $("#value-input").change(function() {
 //           handlePressValueInput();
 
-    console.log("D");
+
 
 
 
@@ -311,32 +311,19 @@ $(document).ready(function() {
     });
 
      $("#value-input").keyup(function(e) {
-     
         $(document).find('[data-exchange-value="input"]').text( $(this).val() );
         $(document).find('[data-exchange-value="output"]').text( $(this).val() * parseFloat($("#currency_exchange").text()) );
-        
-        
-        
-//	$("#cash_input_value").text( $(this).val() );
-//	$("#cash_output_value").text( $(this).val() * $("#currency_exhange").text() );
-	
-	
-	
-	var course_input = parseFloat($('#course-input-value').text());
-	
-	
-	console.log(g_course_output);
-	
-	$("#value-output").val( (parseFloat($(this).val()) / course_input *  g_course_output).toFixed(3)  );
+        var course_input = parseFloat($('#course-input-value').text());
+        $("#value-output").val( (parseFloat($(this).val()) / course_input *  g_course_output).toFixed(3)  );
         $(document).find('[data-exchange-value="output"]').text( $("#value-output").val() );
-////	$("#value-output").val( $("#cash_output_value").text() );
-	
-//	var cash_b = $(".cash_b.main_2nj")[0];
-//	cash_b = $(cash_b);
-//	console.log(cash_b.data("coeff-procent"));
-	
-	
-//	$("#value-output").val( (document.getElementById("value-input").value * cash_b.data("course") + (document.getElementById("value-input").value * cash_b.data("course")) * cash_b.data("coeff-procent")/100).toFixed(2) );
+     });
+     
+     $("#value-output").keyup(function(e) {
+        $(document).find('[data-exchange-value="output"]').text( $(this).val() );
+//        $(document).find('[data-exchange-value="input"]').text( $(this).val() * parseFloat($("#currency_exchange").text()) );
+//          var course_output = parseFloat($('#currency-exchange').text());
+          $("#value-input").val( (parseFloat($(this).val()) / g_course_output * g_course_input).toFixed(3) );
+          $(document).find('[data-exchange-value="input"]').text( $("#value-input").val() );
      });
    
 });
