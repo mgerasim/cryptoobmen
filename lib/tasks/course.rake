@@ -13,53 +13,9 @@ namespace :course do
   task update: :environment do
     puts "course update"
     
-    Admin::Converter.all.each {|converter| 
-      puts "#{converter.cash_a.code}/#{converter.cash_b.code} #{converter.source_course_display}"
-      if (converter.source_course == 1) 
-      
-        url = "https://api.exmo.com/v1/order_book/?pair=#{converter.cash_a.code}_#{converter.cash_b.code}"
-        puts url
-        
-        uri = URI.parse(url)
-        puts uri.host
-        puts uri.port
-        https = Net::HTTP.new(uri.host, uri.port)
-        https.use_ssl = true
-#	params = Addressable::URI.new
-#	params.query_values = {:pair => '#{converter.cash_a.code}_#{converter.cash_b.code}'}
-	#answer = https.post(uri.path, params.query).body
-	answer = https.get(uri.request_uri).body
-	
-	# https://bablofil.ru/exmo-api/
-	hash = JSON.parse(answer)
-	puts answer
-	course = 1.0
-	if (hash["#{converter.cash_a.code}_#{converter.cash_b.code}"] != nil) 
-        	course = hash["#{converter.cash_a.code}_#{converter.cash_b.code}"]["bid_top"]
-        end
-                 
-	puts course
-	converter.course = course;
-	converter.save
-      
-      else
-        
-        url = "https://cex.io/api/convert/#{converter.cash_a.code}/#{converter.cash_b.code}"
-    
-	uri = URI.parse(url)
-	https = Net::HTTP.new(uri.host, uri.port)
-        https.use_ssl = true
-	params = Addressable::URI.new
-	params.query_values = {:amnt => 1}
-	answer = https.post(uri.path, params.query).body
-	hash = JSON.parse(answer)
-	course =  hash['amnt'] 
-	
-	converter.course = course;
-	converter.save
-	
-	
-      end
+    Exchange.all.each {|exchange|
+	exchange.course_update()
     }
+    
   end
 end
