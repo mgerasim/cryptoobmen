@@ -10,6 +10,7 @@
       <th>Коэффициент конвертации (%)</th>
       <th>Комиссия в криптовалюте</th>
       <th>Курс</th>
+      <th>Обновление курса</th>
       <th>Биржа</th>
       <th colspan="3"></th>
     </tr>
@@ -29,6 +30,7 @@
         <td><%= exchange.coeff %></td>
         <td><%= exchange.coeffburse %></td>
         <td><%= exchange.course_display %></td>
+        <td><%= exchange.updated_at %></td>
         <td><%= exchange.burse_display %></td>
         <td><%= link_to 'Показать', exchange %></td>
         <td><%= link_to 'Редактировать', edit_exchange_path(exchange) %></td>
