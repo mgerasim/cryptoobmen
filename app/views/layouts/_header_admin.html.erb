@@ -29,17 +29,6 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
 <div class="header_sm_2y4">
 <div class="header_sm_WNG">
 <button id="headerSmallOpen" class="header_sm_3KJ">
@@ -47,7 +36,7 @@
 </button>
 <div class="header_sm_3z6">
 <a href="/">
-<img src="/templates/kassa/img/logo_sm.jpg" alt="Kassa.cc" class="header_sm_1YO" width="237" height="64">
+<img src="/logo.png" alt="" class="header_sm_1YO" style="width: 55%">
 </a>
 <div class="header_sm_gift">
 
@@ -55,7 +44,7 @@
 <span class="userpanel_crown"></span>
 </span>
 <span class="HW_badge_cont HW_visible HW_mobile">
-<span class="HW_badge HW_softHidden" data-count-unseen="">1</span>
+<span class="HW_badge HW_softHidden" data-count-unseen=""></span>
 </span>
 </div>
 </div>
@@ -68,35 +57,51 @@
 
 <div class="header_sm_nav_1Eu">
 <div class="header_sm_nav_17v">
+<%= link_to "Валюта", currencies_path %>
+<!--
 <a href="/pravila_obmena" target="_self" title="Правила обмена">
 Правила обмена
 </a>
+-->
 </div>
 <div class="header_sm_nav_17v">
+<!--
 <a href="/partners" target="_self" title="Партнерам">
 Партнерам
 </a>
+-->
+<%= link_to "Криптовалюта", cryptocurrencies_path %>
 </div>
 <div class="header_sm_nav_17v">
+<!--
 <a href="/new2s" target="_self" title="Выход">
 Новости
 </a>
+-->
+<%= link_to "Банк", banks_path %>
 </div>
 <div class="header_sm_nav_17v">
+<!--
 <a href="/faq" target="_self" title="FAQ">
 FAQ
 </a>
+-->
+<%= link_to "Обмен", exchanges_path %>
 </div>
 <div class="header_sm_nav_17v">
+<!--
 <a href="/contact" target="_self" title="Контакты">
 Контакты
 </a>
+-->
+<%= link_to "Выход", admin_logout_path, method: :delete %>
 </div>
 
 </div>
 </div>
 <div class="header_sm_nav_-Gy">
 <div class="header_sm_nav_C5D">
+<!--
 <div class="header_sm_nav_29F">
 <a href="/pravila_obmena">Правила и условия сервиса</a>
 </div>
@@ -109,7 +114,7 @@ FAQ
 О сервисе
 </a>
 </div>
-
+-->
 </div>
 </div>
 </div>

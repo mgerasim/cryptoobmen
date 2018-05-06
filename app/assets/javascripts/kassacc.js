@@ -207,6 +207,10 @@ $(document).ready(function() {
     });
     
     InitOutput();
+    
+    $('#headerSmallOpen').click(function() {
+	$('#smallMenu').show();
+    });
 });
     
 
