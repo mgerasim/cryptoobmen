@@ -1,5 +1,6 @@
 class ExchangesController < ApplicationController
   before_action :set_exchange, only: [:show, :edit, :update, :destroy]
+  layout "admin"
 
   # GET /exchanges
   # GET /exchanges.json

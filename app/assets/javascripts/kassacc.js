@@ -196,6 +196,13 @@ $(document).ready(function() {
     
     $(document).find('[data-exchange-type="input"]').click(function() {
 	UpdateInput($(this));
+	
+	var button = $(".buttons_3i0")[0];
+	
+	button.click();
+	
+	$("#btn_close").click();
+	
     });
     
     $(document).find('[data-exchange-type="output"]').click(function() {
@@ -208,9 +215,12 @@ $(document).ready(function() {
     
     InitOutput();
     
+    
     $('#headerSmallOpen').click(function() {
 	$('#smallMenu').show();
     });
+    
+    $('#grid1').show();
 });
     
 

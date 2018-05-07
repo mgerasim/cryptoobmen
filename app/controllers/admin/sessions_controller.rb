@@ -1,6 +1,8 @@
 class Admin::SessionsController < ApplicationController
     skip_before_action :require_login, :only => [:new, :create, :destroy]
     skip_before_action :verify_authenticity_token
+    layout 'admin'
+    
     def new 
     end
     

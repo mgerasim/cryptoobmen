@@ -1,5 +1,6 @@
 class CurrenciesController < ApplicationController
   before_action :set_currency, only: [:show, :edit, :update, :destroy]
+  layout "admin"
 
   # GET /currencies
   # GET /currencies.json
