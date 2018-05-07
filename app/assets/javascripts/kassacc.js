@@ -201,12 +201,13 @@ $(document).ready(function() {
 	
 	button.click();
 	
-	$("#btn_close").click();
 	
     });
     
     $(document).find('[data-exchange-type="output"]').click(function() {
 	UpdateOutput($(this));
+	
+	$("#btn_close").click();
     });
     
     $(".exchange-output").click(function() {
