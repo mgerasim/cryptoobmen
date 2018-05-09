@@ -122,6 +122,7 @@ function UpdateInput(InputCurrency) {
            }
        });
     }
+    $("#mobiinput").text( InputCurrency.data('system-name') );
 }
 
 
@@ -168,7 +169,7 @@ function UpdateOutput(Currency) {
 	$(Currency).removeClass('main_k0X');
 	$(Currency).addClass('main_2nj');
     
-
+    $("#mobioutput").text( Currency.data('system-name') );
 }
 
 function InitOutput() {

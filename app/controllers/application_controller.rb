@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     Rails.logger.error(logged_in?)
     if !logged_in?
 	flash[:danger] = "Вы должны ввести пароль для входа"
-	redirect_to admin_login_path # прерывает цикл запроса
+	redirect_to login_path # прерывает цикл запроса
     end
   end
 end
