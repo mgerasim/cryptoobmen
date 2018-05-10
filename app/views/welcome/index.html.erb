@@ -32,17 +32,6 @@
                     <span class="main_Uww"></span>
                   </button>
                 </div>
-                <!--
-                <p>Валюта отдачи:</p>
-                <div class="main_Q66">
-                    <div class="main_jgK" data-exchange-filter="0">Все</div>
-                    
-                    <div class="main_3DC" data-exchange-filter="1">Руб</div>
-                    <div class="main_3DC" data-exchange-filter="2">USD</div>
-                    <div class="main_3DC" data-exchange-filter="3">Coin</div>
-                    
-                </div>
-                -->
                 <p>
                     <span class="main_2aj"></span> Выберите систему:
                 </p>
@@ -68,17 +57,6 @@
             	    </div>
                 <% end %>
                 
-<!--
-    <% @cashes_a.select(:cash_a_id).distinct.each do |item| %>
-    	<div class="main_k0X cash_a" data-cash="<%= item.cash_a.id %>" data-input-currency="<%= item.cash_a.code %>" data-body="3" data-typecy="<%= item.cash_a.category %>" data-system-name="<%= item.cash_a.name %>" data-system-icon="<%= item.cash_a.icon %>">
-    	    <div class="main_1g8">                            
-    		<span class="<%= item.cash_a.icon %>"></span>
-    	    </div>
-    	                        
-    	    <div class="main_2-h"><%= item.cash_a.name %></div>
-    	</div>
-    <% end %>
-    -->
                 </div>
                 
 
@@ -120,17 +98,7 @@
                     <span class="main_Uww"></span>
                   </button>
                 </div>
-                <!--
-                <p>Валюта получения:</p>
-                <div class="main_Q66">
-                    <div class="main_3DC cash_b_typecy" data-exchange-filter="0">Все</div>
-                    
-                    <div class="main_3DC cash_b_typecy" data-exchange-filter="1">Руб</div>
-                    <div class="main_3DC cash_b_typecy" data-exchange-filter="2">USD</div>
-                    <div class="main_jgK cash_b_typecy" data-exchange-filter="3">Coin</div>
-                    
-                </div>
-                -->
+
                 <p>
                     <span class="main_2aj">                        <span class="main_3g_">Резервы валют</span>
                     </span> Выберите систему:
@@ -142,7 +110,7 @@
                 
             <% @exchanges.each do |exchange| %>
                 <% exchange.currency.banks.each do |bank| %>
-            	    <div class="main_k0X exchange-output"  data-exchange-type="output" data-currency-code="<%= exchange.currency.code %>" data-cryptocurrency="<%= exchange.cryptocurrency.id%>"  data-currency="<%= exchange.currency.id%>" data-exchange="<%= exchange.id %>" data-bank="<%= bank.id %>" data-system-name="<%= bank.name %>"  data-body="3" data-typecy="3" data-logo="<%= bank.logo.url(:med) %>" data-course-output="<%= exchange.converter %>" data-course-input="1">
+            	    <div class="main_k0X exchange-output"  data-exchange-type="output" data-currency-code="<%= exchange.currency.code %>" data-cryptocurrency="<%= exchange.cryptocurrency.id%>"  data-currency="<%= exchange.currency.id%>" data-exchange="<%= exchange.id %>" data-bank="<%= bank.id %>" data-system-name="<%= bank.name %>"  data-body="3" data-typecy="3" data-logo="<%= bank.logo.url(:med) %>" data-course-output="<%= exchange.converter %>" data-course-input="1" data-coeffburse="">
             		    <div class="main_1g8">
             		      <span>  <%= image_tag bank.logo.url(:small) %></span>
             		    </div>
@@ -150,7 +118,7 @@
             	        </div>            	        
             	<% end %>
             	
-            	<div class="main_k0X exchange-output"  data-exchange-type="output" data-cryptocurrency="<%= exchange.cryptocurrency.id %>" data-currency="<%= exchange.currency.id%>" data-exchange="<%= exchange.id %>" data-currency-code="<%= exchange.cryptocurrency.code %>" data-body="3" data-typecy="3" data-system-name="<%= exchange.cryptocurrency.name %>" data-logo="<%= exchange.cryptocurrency.logo.url(:med) %>" data-course-input="<%= exchange.converter_crypto %>" data-course-output="1">
+            	<div class="main_k0X exchange-output"  data-exchange-type="output" data-cryptocurrency="<%= exchange.cryptocurrency.id %>" data-currency="<%= exchange.currency.id%>" data-exchange="<%= exchange.id %>" data-currency-code="<%= exchange.cryptocurrency.code %>" data-body="3" data-typecy="3" data-system-name="<%= exchange.cryptocurrency.name %>" data-logo="<%= exchange.cryptocurrency.logo.url(:med) %>" data-course-input="<%= exchange.converter_crypto %>" data-course-output="1" data-coeffburse="<%= exchange.coeffbursetext %>">
             		<div class="main_1g8">
             		  <span>  <%= image_tag exchange.cryptocurrency.logo.url(:small) %></span>
             		</div>
@@ -159,36 +127,6 @@
             	
             <% end %>
     
-<!--
-		<% @exchanges.select(:currency_id).distinct.each do |item| %>
-		    <% item.currency.banks.each do |bank| %>
-		        <div class="main_k0X"  data-exchange-type="output" style="display: none;" data-currency-code="<%= item.currency.code %>" data-currency="<%= item.currency.id%>" data-bank="<%= bank.id %>"  data-body="3" data-typecy="3" >
-            		    <div class="main_1g8">
-            		      <span>  <%= image_tag bank.logo.url(:small) %></span>
-            		    </div>
-            		    <div class="main_2-h"><%= bank.name + ' ' + item.currency.code %></div>
-            	        </div>
-		    <% end %>
-		<% end %>
-                <% @exchanges.select(:cryptocurrency_id).distinct.each do |item| %>
-            	    <div class="main_k0X"  data-exchange-type="output" style="display: none;" data-cryptocurrency="<%= item.cryptocurrency.id %>" data-currency-code="<%= item.cryptocurrency.code %>" data-body="3" data-typecy="3" data-system-name="<%= item.cryptocurrency.name %>">
-            		<div class="main_1g8">
-            		  <span>  <%= image_tag item.cryptocurrency.logo.url(:small) %></span>
-            		</div>
-            		<div class="main_2-h"><%= item.cryptocurrency.name %></div>
-            	    </div>
-    
-           <% end %>            
--->
-    <!--              
-    <% @cashes_a.each do |item| %>
-    	<div class="main_k0X cash_b" data-coeff-procent="<%= item.coeff_procent %>" data-course="<%= item.course_display %>" data-body="3" data-cash_a=<%= item.cash_a.id %> data-output-currency="<%= item.cash_b.code %>" data-typecy="<%= item.cash_b.category %>" data-system-name="<%= item.cash_b.name %>" data-system-icon="<%= item.cash_b.icon %>" ><div class="main_1g8">                            <span class="<%= item.cash_b.icon %>"></span>
-    	                        </div>
-    	                        
-    	                                                <div class="main_2-h"><%= item.cash_b.name %></div>
-    	                                                                    </div>
-    <% end %>
-    -->
                 </div>
 
 
@@ -208,6 +146,11 @@
                    = <span id="currency_exhange" data-course="output-value">17.515</span>
                   <span id="output-currency" data-exchange-currency="output">eth</span>
                 </p>
+                
+                <p class="main_2fW">
+            	    <span id="coeffburse"></span>
+                </p>
+                
                 <div class="main_1I3">
                     <div class="main_3LV">
                         <div class="main_1g8">

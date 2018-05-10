@@ -79,5 +79,9 @@ class Exchange < ApplicationRecord
     def converter_crypto
 	(self.course - self.course * self.coeffburse * self.coeff / 100.0).to_s
     end
+    
+    def coeffbursetext
+	"Комиссия: " + self.coeffburse.to_s
+    end
 
 end

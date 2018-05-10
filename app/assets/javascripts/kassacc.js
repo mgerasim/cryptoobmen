@@ -170,6 +170,7 @@ function UpdateOutput(Currency) {
 	$(Currency).addClass('main_2nj');
     
     $("#mobioutput").text( Currency.data('system-name') );
+    $("#coeffburse").text( Currency.data('coeffburse' ) );
 }
 
 function InitOutput() {
