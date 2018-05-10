@@ -81,7 +81,7 @@ class Exchange < ApplicationRecord
     end
     
     def coeffbursetext
-	"Комиссия: " + self.coeffburse.to_s
+	"Комиссия: " + self.coeffburse.to_s + " " + self.cryptocurrency.code
     end
 
 end
