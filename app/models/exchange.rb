@@ -73,11 +73,11 @@ class Exchange < ApplicationRecord
     end
 
     def converter
-	(self.course + self.course * self.coeffburse * self.coeff / 100.0).to_s
+	(self.course - (self.course * (self.coeffburse + self.coeff / 100.0))).to_s
     end
     
     def converter_crypto
-	(self.course - self.course * self.coeffburse * self.coeff / 100.0).to_s
+	(self.course + (self.course * (self.coeffburse + self.coeff / 100.0))).to_s
     end
     
     def coeffbursetext
