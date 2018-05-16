@@ -52,6 +52,7 @@ class Exchange < ApplicationRecord
         end
                  
 	converter.update_column(:course, course)
+	converter.update_column(:coursed_at, DateTime.now)
       
       else
         
@@ -67,7 +68,7 @@ class Exchange < ApplicationRecord
 	course =  hash['amnt'] 
 	
 	converter.update_column(:course, course)
-	
+	converter.update_column(:coursed_at, DateTime.now)
 	
       end
     end
@@ -81,7 +82,7 @@ class Exchange < ApplicationRecord
     end
     
     def coeffbursetext
-	"Комиссия: " + self.coeffburse.to_s + " " + self.cryptocurrency.code
+	"Комиссия сети: " + self.coeffburse.to_s + " " + self.cryptocurrency.code
     end
 
 end
