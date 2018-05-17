@@ -68,8 +68,14 @@ function UpdateInput(InputCurrency) {
     system = $(document).find('[data-exchange-name="input"]');
     $(system).text( InputCurrency.data('system-name') );
     
+    var store = "Карта ";
+    
+    
     if ( typeof InputCurrency.data("cryptocurrency") !== 'undefined' ) 
     {
+    
+	store = "Кошелек ";
+    
        var cryptocurrency = InputCurrency.data("cryptocurrency");
        console.log(cryptocurrency);
        var isShowed = 0;
@@ -123,6 +129,10 @@ function UpdateInput(InputCurrency) {
        });
     }
     $("#mobiinput").text( InputCurrency.data('system-name') );
+    
+    console.log($("#input-account-store"));
+    
+    $("#input-account-store").text( store + InputCurrency.data('system-name')  );
 }
 
 
@@ -159,7 +169,7 @@ function UpdateOutput(Currency) {
     $(span_course_output).text( parseFloat(Currency.data('course-output')).toFixed(2) );
     $(document).find('[data-exchange-value="output"]').text( parseFloat(Currency.data('course-output')).toFixed(2) );    
         
-    $(document).find('[data-exchange-form-label="output-account"]').text( Currency.data('system-name')  );
+    $(document).find('[data-exchange-form-label="output-account"]').text( Currency.data('store') + Currency.data('system-name')  );
         
     $("#cashes_to").children().each(function(i, e) {
     	   $(e).removeClass('main_2nj');

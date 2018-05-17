@@ -110,7 +110,7 @@
                 
             <% @exchanges.each do |exchange| %>
                 <% exchange.currency.banks.each do |bank| %>
-            	    <div class="main_k0X exchange-output"  data-exchange-type="output" data-currency-code="<%= exchange.currency.code %>" data-cryptocurrency="<%= exchange.cryptocurrency.id%>"  data-currency="<%= exchange.currency.id%>" data-exchange="<%= exchange.id %>" data-bank="<%= bank.id %>" data-system-name="<%= bank.name %>"  data-body="3" data-typecy="3" data-logo="<%= bank.logo.url(:med) %>" data-course-output="<%= exchange.converter %>" data-course-input="1" data-coeffburse="">
+            	    <div class="main_k0X exchange-output"  data-exchange-type="output" data-currency-code="<%= exchange.currency.code %>" data-cryptocurrency="<%= exchange.cryptocurrency.id%>"  data-currency="<%= exchange.currency.id%>" data-exchange="<%= exchange.id %>" data-bank="<%= bank.id %>" data-system-name="<%= bank.name %>"  data-body="3" data-typecy="3" data-store="Карта " data-logo="<%= bank.logo.url(:med) %>" data-course-output="<%= exchange.converter %>" data-course-input="1" data-coeffburse="">
             		    <div class="main_1g8">
             		      <span>  <%= image_tag bank.logo.url(:small) %></span>
             		    </div>
@@ -118,7 +118,7 @@
             	        </div>            	        
             	<% end %>
             	
-            	<div class="main_k0X exchange-output"  data-exchange-type="output" data-cryptocurrency="<%= exchange.cryptocurrency.id %>" data-currency="<%= exchange.currency.id%>" data-exchange="<%= exchange.id %>" data-currency-code="<%= exchange.cryptocurrency.code %>" data-body="3" data-typecy="3" data-system-name="<%= exchange.cryptocurrency.name %>" data-logo="<%= exchange.cryptocurrency.logo.url(:med) %>" data-course-input="<%= exchange.converter_crypto %>" data-course-output="1" data-coeffburse="<%= exchange.coeffbursetext %>">
+            	<div class="main_k0X exchange-output"  data-exchange-type="output" data-cryptocurrency="<%= exchange.cryptocurrency.id %>" data-currency="<%= exchange.currency.id%>" data-exchange="<%= exchange.id %>" data-currency-code="<%= exchange.cryptocurrency.code %>" data-body="3" data-typecy="3" data-system-name="<%= exchange.cryptocurrency.name %>" data-store="Кошелек " data-logo="<%= exchange.cryptocurrency.logo.url(:med) %>" data-course-input="<%= exchange.converter_crypto %>" data-course-output="1" data-coeffburse="<%= exchange.coeffbursetext %>">
             		<div class="main_1g8">
             		  <span>  <%= image_tag exchange.cryptocurrency.logo.url(:small) %></span>
             		</div>
@@ -183,22 +183,23 @@
                             <span class="form_3R3"></span>
                         </div>
                     </div>
-                                <div class="form_3hz" data-exchange-form="input-account" style="display: none;">
-                    <label data-toggle="floatLabel" class="form_2Gw">
-                        <span class="form_3Mi" data-exchange-form-label="input-account">Кошелек Bitcoin</span>
-                        <input class="form_2nL">
-                    </label>
-                    <div class="form_qzZ">
-                        <span class="main_8sl">
-                            <span class="iconpay-bitcoin" data-exchange-icon="input"></span>
-                        </span>
-                    </div>
-                </div>
+                    
                                 <div class="form_3hz" data-exchange-form="input-fullname" style="">
                     <label data-toggle="floatLabel" class="form_2Gw">
                         <span class="form_3Mi">ФИО отправителя</span>
                         <input class="form_2nL"> </label>
                     <div class="form_qzZ"></div>
+                </div>
+                                <div class="form_3hz" data-exchange-form="input-account" style="">
+                    <label data-toggle="floatLabel" class="form_2Gw">
+                        <span id="input-account-store" class="form_3Mi" data-exchange-form-label="input-account"></span>
+                        <input class="form_2nL">
+                    </label>
+                    <div class="form_qzZ">
+                        <span class="main_8sl">
+                            <span id="input-account-store-icon" class="" data-exchange-icon="input"></span>
+                        </span>
+                    </div>
                 </div>
                 <div class="form_3hz" style="display:none" data-exchange-form="input-unk">
                     <label data-toggle="floatLabel" class="form_2Gw">
@@ -209,7 +210,7 @@
                 </div>
                 <div class="form_3hz" data-exchange-form="output-account" style="">
                     <label data-toggle="floatLabel" class="form_2Gw">
-                        <span class="form_3Mi" data-exchange-form-label="output-account">Кошелек Ethereum</span>
+                        <span id="output-account-store" class="form_3Mi" data-exchange-form-label="output-account"></span>
                         <input class="form_2nL">
                     </label>
                     <div class="form_qzZ">
@@ -218,7 +219,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="form_3hz fio_b_label" data-exchange-form="output-fullname" style="">
+                <div class="form_3hz fio_b_label" data-exchange-form="output-fullname" style="display: none">
                     <label data-toggle="floatLabel" class="form_2Gw">
                         <span class="form_3Mi">Номер банковской карты</span>
                         <input class="form_2nL"> </label>
