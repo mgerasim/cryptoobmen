@@ -1,0 +1,2 @@
+class Obman < ApplicationRecord
+end

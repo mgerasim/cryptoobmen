@@ -1,0 +1,2 @@
+module ObmenHelper
+end

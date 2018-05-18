@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  value_input: 1.5
+  value_output: 1.5
+  currency_input: MyString
+  currency_output: MyString
+  email: MyString
+  fullname: MyString
+  input_account: MyString
+  output_account: MyString
+  status: 1
+  agree: false
+
+two:
+  value_input: 1.5
+  value_output: 1.5
+  currency_input: MyString
+  currency_output: MyString
+  email: MyString
+  fullname: MyString
+  input_account: MyString
+  output_account: MyString
+  status: 1
+  agree: false

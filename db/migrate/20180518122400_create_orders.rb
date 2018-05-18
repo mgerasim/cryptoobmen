@@ -1,6 +1,6 @@
-class CreateObmen < ActiveRecord::Migration[5.1]
+class CreateOrders < ActiveRecord::Migration[5.1]
   def change
-    create_table :obmen do |t|
+    create_table :orders do |t|
       t.float :value_input
       t.float :value_output
       t.string :currency_input

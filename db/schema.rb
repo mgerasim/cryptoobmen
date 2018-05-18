@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180510142145) do
+ActiveRecord::Schema.define(version: 20180518122400) do
 
   create_table "admin_cashes", force: :cascade do |t|
     t.string "code"
@@ -34,8 +34,17 @@ ActiveRecord::Schema.define(version: 20180510142145) do
     t.index ["cash_b_id"], name: "index_admin_converters_on_cash_b_id"
   end
 
-# Could not dump table "banks" because of following StandardError
-#   Unknown type 'attachment' for column 'logo'
+  create_table "banks", force: :cascade do |t|
+    t.string "name"
+    t.integer "currency_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "logo_file_name"
+    t.string "logo_content_type"
+    t.integer "logo_file_size"
+    t.datetime "logo_updated_at"
+    t.index ["currency_id"], name: "index_banks_on_currency_id"
+  end
 
   create_table "banks_currencies", id: false, force: :cascade do |t|
     t.integer "bank_id", null: false
@@ -77,6 +86,21 @@ ActiveRecord::Schema.define(version: 20180510142145) do
     t.index ["cryptocurrency_id", "currency_id"], name: "index_exchanges_on_cryptocurrency_id_and_currency_id", unique: true
     t.index ["cryptocurrency_id"], name: "index_exchanges_on_cryptocurrency_id"
     t.index ["currency_id"], name: "index_exchanges_on_currency_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.float "value_input"
+    t.float "value_output"
+    t.string "currency_input"
+    t.string "currency_output"
+    t.string "email"
+    t.string "fullname"
+    t.string "input_account"
+    t.string "output_account"
+    t.integer "status"
+    t.boolean "agree"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

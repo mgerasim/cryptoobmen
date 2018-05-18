@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Value input:</strong>
+  <%= @order.value_input %>
+</p>
+
+<p>
+  <strong>Value output:</strong>
+  <%= @order.value_output %>
+</p>
+
+<p>
+  <strong>Currency input:</strong>
+  <%= @order.currency_input %>
+</p>
+
+<p>
+  <strong>Currency output:</strong>
+  <%= @order.currency_output %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @order.email %>
+</p>
+
+<p>
+  <strong>Fullname:</strong>
+  <%= @order.fullname %>
+</p>
+
+<p>
+  <strong>Input account:</strong>
+  <%= @order.input_account %>
+</p>
+
+<p>
+  <strong>Output account:</strong>
+  <%= @order.output_account %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @order.status %>
+</p>
+
+<p>
+  <strong>Agree:</strong>
+  <%= @order.agree %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

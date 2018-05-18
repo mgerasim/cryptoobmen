@@ -1,0 +1,67 @@
+<%= form_with(model: order, local: true) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :value_input %>
+    <%= form.text_field :value_input, id: :order_value_input %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value_output %>
+    <%= form.text_field :value_output, id: :order_value_output %>
+  </div>
+
+  <div class="field">
+    <%= form.label :currency_input %>
+    <%= form.text_field :currency_input, id: :order_currency_input %>
+  </div>
+
+  <div class="field">
+    <%= form.label :currency_output %>
+    <%= form.text_field :currency_output, id: :order_currency_output %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :order_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fullname %>
+    <%= form.text_field :fullname, id: :order_fullname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :input_account %>
+    <%= form.text_field :input_account, id: :order_input_account %>
+  </div>
+
+  <div class="field">
+    <%= form.label :output_account %>
+    <%= form.text_field :output_account, id: :order_output_account %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.number_field :status, id: :order_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :agree %>
+    <%= form.check_box :agree, id: :order_agree %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
