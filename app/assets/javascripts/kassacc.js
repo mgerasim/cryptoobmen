@@ -353,6 +353,21 @@ $(document).ready(function() {
           $(document).find('[data-exchange-value="input"]').text( $("#value-input").val() );
      });
    
+   // Orders
+   
+   $("#sendRequest").click(function() {
+	var value_input = $("#value-input").val();
+	var value_output = $("#value-output").val();
+	var input_currency = $("#form_cash_a_name").text() + " " + $("#input-currency").text();
+	var output_currency = $("#form_cash_b_name").text() + " " + $("#output-currency").text();
+	var email = $("#order-email").text();
+	var fullname = $("#order-fullname").text();
+	var input_account_store = $("#order-input-account-store").val();
+	var output_account_store = $("#order-output-account-store").val();
+	console.log(output_account_store);
+	
+   });
+   
 });
 
 document.addEventListener("DOMContentLoadedee", function() {
