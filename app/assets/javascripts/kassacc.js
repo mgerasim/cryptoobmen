@@ -364,7 +364,28 @@ $(document).ready(function() {
 	var fullname = $("#order-fullname").text();
 	var input_account_store = $("#order-input-account-store").val();
 	var output_account_store = $("#order-output-account-store").val();
+/*	
+	$.ajax({
+	    method: "POST",
+	    url: "/api/v1/orders/create",
+	    data: {order: {text: valuee}},
+	    success(function() {
+	    }),
+	    error(function() {
+	    })
+	});
+*/
+
+	$.post("/api/v1/orders/create",
+	    {
+		name: "ddd"
+	    },
+	    function(data, status) {
+	    }
+	);	
 	console.log(output_account_store);
+	
+	
 	
    });
    

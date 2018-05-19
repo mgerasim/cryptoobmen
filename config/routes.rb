@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      post 'orders/create'
+    end
+  end
+
   resources :orders
   resources :obmen
   resources :exchanges
