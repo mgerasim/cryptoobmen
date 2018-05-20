@@ -358,10 +358,10 @@ $(document).ready(function() {
    $("#sendRequest").click(function() {
 	var value_input = $("#value-input").val();
 	var value_output = $("#value-output").val();
-	var input_currency = $("#form_cash_a_name").text() + " " + $("#input-currency").text();
-	var output_currency = $("#form_cash_b_name").text() + " " + $("#output-currency").text();
-	var email = $("#order-email").text();
-	var fullname = $("#order-fullname").text();
+	var currency_input = $("#form_cash_a_name").text() + " " + $("#input-currency").text();
+	var currency_output = $("#form_cash_b_name").text() + " " + $("#output-currency").text();
+	var email = $("#order-email").val();
+	var fullname = $("#order-fullname").val();
 	var input_account_store = $("#order-input-account-store").val();
 	var output_account_store = $("#order-output-account-store").val();
 /*	
