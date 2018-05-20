@@ -10,6 +10,7 @@ class Api::V1::OrdersController < ApplicationController
     order.fullname = params[:fullname]
     order.input_account = params[:input_account]
     order.output_account = params[:output_account]
+    order.status = params[:status]
     order.save
   end
 end

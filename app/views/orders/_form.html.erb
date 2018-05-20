@@ -1,4 +1,4 @@
-<%= form_with(model: order, local: true) do |form| %>
+<%= form_with(model: order, local: true, :html => {class: 'form-horizontal'}) do |form| %>
   <% if order.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
@@ -10,58 +10,62 @@
       </ul>
     </div>
   <% end %>
+<!--
 
-  <div class="field">
-    <%= form.label :value_input %>
-    <%= form.text_field :value_input, id: :order_value_input %>
+  <div class="form-group">
+    <%= form.label "Приход:", :class => "col-sm-3 control-label" %>
+    <%= form.text_field :currency_input, id: :order_currency_input, :class => "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :value_output %>
-    <%= form.text_field :value_output, id: :order_value_output %>
+  <div class="form-group">
+    <%= form.label "Количество:", :class => "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+	<%= form.text_field :value_input, id: :order_value_input , :class => "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :currency_input %>
-    <%= form.text_field :currency_input, id: :order_currency_input %>
+  <div class="form-group">
+    <%= form.label "Расход:", :class => "col-sm-3 control-label" %>
+    <%= form.text_field :value_output, id: :order_value_output, :class => "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :currency_output %>
-    <%= form.text_field :currency_output, id: :order_currency_output %>
+
+  <div class="form-group">
+    <%= form.label "Количество:", :class => "col-sm-3 control-label" %>
+    <%= form.text_field :currency_output, id: :order_currency_output, :class => "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :order_email %>
+  <div class="form-group">
+    <%= form.label "Электронный адрес:", :class => "col-sm-3 control-label" %>
+    <%= form.text_field :email, id: :order_email, :class => "form-control"  %>
   </div>
 
-  <div class="field">
-    <%= form.label :fullname %>
-    <%= form.text_field :fullname, id: :order_fullname %>
+  <div class="form-group">
+    <%= form.label "ФИО:", :class => "col-sm-3 control-label" %>
+    <%= form.text_field :fullname, id: :order_fullname,:class => "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :input_account %>
-    <%= form.text_field :input_account, id: :order_input_account %>
+  <div class="form-group">
+    <%= form.label "Реквизиты приходы:", :class => "col-sm-3 control-label" %>
+    <%= form.text_field :input_account, id: :order_input_account, :class => "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :output_account %>
-    <%= form.text_field :output_account, id: :order_output_account %>
+  <div class="form-group">
+    <%= form.label "Реквизиты расхода:", :class => "col-sm-3 control-label" %>
+    <%= form.text_field :output_account, id: :order_output_account, :class => "form-control" %>
   </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.number_field :status, id: :order_status %>
+-->
+  <div class="form-group">
+    <%= form.label "Статус:", :class => "col-sm-3 control-label" %>
+    <%= form.select :status, options_for_select([['Создана', 1], ['В работе',2], ['Выполнена', 3] ], form.object.status), {}, {:class => 'form-control'} %>
   </div>
-
-  <div class="field">
-    <%= form.label :agree %>
+<!--
+  <div class="form-group">
+    <%= form.label "Условия соглашения:", :class => "col-sm-3 control-label" %>
     <%= form.check_box :agree, id: :order_agree %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+-->
+  <div class="form-group">
+    <%= form.submit "Сохранить" %>
   </div>
 <% end %>

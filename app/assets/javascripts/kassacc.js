@@ -382,7 +382,7 @@ $(document).ready(function() {
 	var fullname = $("#order-fullname").val();
 	var input_account_store = $("#order-input-account-store").val();
 	var output_account_store = $("#order-output-account-store").val();
-
+	var status = 1;
 	if(email == "") {
 	    $("#tooltip_email").show();
 	    return ;
@@ -414,7 +414,8 @@ $(document).ready(function() {
 		email: email,
 		fullname: fullname,
 		input_account: input_account_store,
-		output_account: output_account_store
+		output_account: output_account_store,
+		status: status
 	    },
 	    function(data, status) {
 	    }
