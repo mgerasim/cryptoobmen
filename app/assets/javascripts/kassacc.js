@@ -378,7 +378,14 @@ $(document).ready(function() {
 
 	$.post("/api/v1/orders/create",
 	    {
-		name: "ddd"
+		value_input: value_input,
+		value_output: value_output,
+		currency_input: currency_input,
+		currency_output: currency_output,
+		email: email,
+		fullname: fullname,
+		input_account,
+		output_account
 	    },
 	    function(data, status) {
 	    }
