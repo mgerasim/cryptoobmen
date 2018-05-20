@@ -183,6 +183,9 @@
                             <span class="form_3R3"></span>
                         </div>
                     </div>
+
+                    <div class="tooltip tooltip-danger fade bottom in" role="tooltip" style="/*! width: 338.867px; */ /*! top: 290.2px; */ /*! left: 785px; */ display: none;" id="tooltip_email"><div class="tooltip-arrow" style="left: 50%;"></div><button type="button" class="tooltip-cross"></button><div class="tooltip-inner"><div class="tooltip-title">Ошибка!</div><div class="tooltip-text">Введите правильный E-mail</div></div></div>
+                    
                     
                                 <div class="form_3hz" data-exchange-form="input-fullname" style="">
                     <label data-toggle="floatLabel" class="form_2Gw">
@@ -190,6 +193,12 @@
                         <input id="order-fullname" class="form_2nL"> </label>
                     <div class="form_qzZ"></div>
                 </div>
+
+
+
+                <div class="tooltip tooltip-danger fade bottom in" role="tooltip" style="/*! width: 338.867px; */ /*! top: 290.2px; */ /*! left: 785px; */ display: none;" id="tooltip_fullname"><div class="tooltip-arrow" style="left: 50%;"></div><button type="button" class="tooltip-cross"></button><div class="tooltip-inner"><div class="tooltip-title">Ошибка!</div><div class="tooltip-text">Укажите ФИО</div></div></div>
+
+
                                 <div class="form_3hz" data-exchange-form="input-account" style="">
                     <label data-toggle="floatLabel" class="form_2Gw">
                         <span id="input-account-store" class="form_3Mi" data-exchange-form-label="input-account"></span>
@@ -208,6 +217,12 @@
                     <div class="form_qzZ">
                     </div>
                 </div>
+                
+                
+
+                <div class="tooltip tooltip-danger fade bottom in" role="tooltip" style="/*! width: 338.867px; */ /*! top: 290.2px; */ /*! left: 785px; */ display: none;" id="tooltip_input_account_store"><div class="tooltip-arrow" style="left: 50%;"></div><button type="button" class="tooltip-cross"></button><div class="tooltip-inner"><div class="tooltip-title">Ошибка!</div><div class="tooltip-text">Введите реквизиты</div></div></div>
+                
+                
                 <div class="form_3hz" data-exchange-form="output-account" style="">
                     <label data-toggle="floatLabel" class="form_2Gw">
                         <span id="output-account-store" class="form_3Mi" data-exchange-form-label="output-account"></span>
@@ -219,6 +234,11 @@
                         </span>
                     </div>
                 </div>
+                
+
+                <div class="tooltip tooltip-danger fade bottom in" role="tooltip" style="/*! width: 338.867px; */ /*! top: 290.2px; */ /*! left: 785px; */ display: none;" id="tooltip_output_account_store"><div class="tooltip-arrow" style="left: 50%;"></div><button type="button" class="tooltip-cross"></button><div class="tooltip-inner"><div class="tooltip-title">Ошибка!</div><div class="tooltip-text">Введите реквизиты</div></div></div>
+
+                
                 <div class="form_3hz fio_b_label" data-exchange-form="output-fullname" style="display: none">
                     <label data-toggle="floatLabel" class="form_2Gw">
                         <span class="form_3Mi">Номер банковской карты</span>
@@ -255,10 +275,20 @@
                     </span>
                 </label>
 
-                <button class="buttons_2FG" data-exchange-form="submit" type="button" id="sendRequest">
+                <button class="buttons_2FG" data-exchange-form1="submit" type="button" id="sendOrder">
                     Обменять сейчас
                 </button>
+                
+            <p>
+            
+                <div id="order-alert" class="alert alert-success" role="alert">
+                  Заявка успешна подана!
+                  </div>
+                
+            </p>    
             </div>
+            
+            
         </div>
 
               </div>
