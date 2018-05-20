@@ -353,9 +353,27 @@ $(document).ready(function() {
           $(document).find('[data-exchange-value="input"]').text( $("#value-input").val() );
      });
    
+   $("#order-email").change(function() {
+	$("#tooltip_email").hide();
+   });
+   
+   $("#order-fullname").change(function() {
+	$("#tooltip_fullname").hide();
+   });
+   
+   $("#order-input-account-store").change(function() {
+	$("#tooltip_input_account_store").hide();
+   });
+   
+   $("#order-output-account-store").change(function() {
+	$("#tooltip_output_account_store").hide();
+   });
+   
+   $("#order-alert").hide();
+   
    // Orders
    
-   $("#sendRequest").click(function() {
+   $("#sendOrder").click(function() {
 	var value_input = $("#value-input").val();
 	var value_output = $("#value-output").val();
 	var currency_input = $("#form_cash_a_name").text() + " " + $("#input-currency").text();
@@ -364,17 +382,28 @@ $(document).ready(function() {
 	var fullname = $("#order-fullname").val();
 	var input_account_store = $("#order-input-account-store").val();
 	var output_account_store = $("#order-output-account-store").val();
-/*	
-	$.ajax({
-	    method: "POST",
-	    url: "/api/v1/orders/create",
-	    data: {order: {text: valuee}},
-	    success(function() {
-	    }),
-	    error(function() {
-	    })
-	});
-*/
+
+	if(email == "") {
+	    $("#tooltip_email").show();
+	    return ;
+	}
+	
+	if(fullname == "") {
+	    $("#tooltip_fullname").show();
+	    return ;
+	}
+	
+	if(input_account_store == "") {
+	    $("#tooltip_input_account_store").show();
+	    return ;
+	}
+	
+	if(output_account_store == "") {
+	    $("#tooltip_output_account_store").show();
+	    return ;
+	}
+
+	$(this).addClass("loading");
 
 	$.post("/api/v1/orders/create",
 	    {
@@ -389,12 +418,21 @@ $(document).ready(function() {
 	    },
 	    function(data, status) {
 	    }
-	);	
+	)
+	.done(function() {
+	    $("#order-alert").show();
+	    $("#sendOrder").removeClass("loading");
+	});	
 	console.log(output_account_store);
 	
 	
+       $('[data-toggle="tooltip"]').tooltip({title : 'Текст всплывающей подсказки при отсутствии атрибута data-title.',
+           placement: 'right',
+               delay: { show: 300, hide: 1000 }});
+	
 	
    });
+   
    
 });
 
