@@ -384,8 +384,8 @@ $(document).ready(function() {
 		currency_output: currency_output,
 		email: email,
 		fullname: fullname,
-		input_account,
-		output_account
+		input_account: input_account_store,
+		output_account: output_account_store
 	    },
 	    function(data, status) {
 	    }
