@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180518122400) do
+ActiveRecord::Schema.define(version: 20180523092611) do
 
   create_table "admin_cashes", force: :cascade do |t|
     t.string "code"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 20180518122400) do
     t.string "logo_content_type"
     t.integer "logo_file_size"
     t.datetime "logo_updated_at"
+    t.string "account"
+    t.string "personal"
     t.index ["currency_id"], name: "index_banks_on_currency_id"
   end
 

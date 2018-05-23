@@ -8,6 +8,8 @@
       <th>Логотип</th>
       <th>Наименование</th>
       <th>Валюта</th>
+      <th>Счет</th>
+      <th>ФИО</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,6 +25,8 @@
         
         <td><%= bank.name %></td>
         <td><%= bank._currencies %></td>
+        <td><%= bank.account %></td>
+        <td><%= bank.personal %></td>
         <td><%= link_to 'Показать', bank %></td>
         <td><%= link_to 'Редактировать', edit_bank_path(bank) %></td>
         <td><%= link_to 'Удалить', bank, method: :delete, data: { confirm: 'Вы уверены?' } %></td>

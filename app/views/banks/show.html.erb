@@ -11,9 +11,19 @@
 </p>
 
 <p>
+    <strong>Счет:</strong>
+    <%= @bank.account %>
+</p>
+
+<p>
+    <strong>ФИО:</strong>
+    <%= @bank.personal %>
+</p>
+
+<p>
   <strong>Логотип:</strong>
   <%= link_to image_tag(@bank.logo.url(:med)), @bank.logo.url %>
- </p>
+</p>
 
 <%= link_to 'Редактировать', edit_bank_path(@bank) %> |
 <%= link_to 'Назад', banks_path %>
