@@ -1,0 +1,66 @@
+<div class="main_3FS" data-exchange-column="input">
+                    <div data-block="main" class="main_xU-">
+            <div class="main_2eU">
+                <div class="main_1Me">
+                    <span class="main_3R6"></span>
+                </div>
+                1. Отдаёте            </div>
+            <div class="main_3MK">
+                <div class="form_2Ix">
+                    <div class="form_2Gw">
+                        <input id="value-input" class="form_2nL" data-toggle="onlyNumber" value="0">
+                    </div>
+                    <div class="form_1CY">
+                        <span class="main_3Mj">
+                            <span data-exchange-icon="input" ></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div id="mobiinput" class="main_Uu_" data-exchange-toggle="select">
+        	<span class="main_11I">
+		    <span class="iconpay-bitcoin"></span>
+		</span> 
+		Bitcoin
+	    </div>
+            
+            <div class="main_rpT">
+              <div class="main_2HO">
+                <div class="main_2Tp">
+                  <button type="button" class="buttons_3i0" data-exchange-dismiss="select">
+                    <span class="main_Uww"></span>
+                  </button>
+                </div>
+                <p>
+                    <span class="main_2aj"></span> Выберите систему:
+                </p>
+                
+                <div id="init_cash" class="main_2Lu step_ps_list"> 
+    
+		<% @exchanges.select(:currency_id).distinct.each do |item| %>
+		    <% item.currency.banks.each do |bank| %>
+		        <div class="main_k0X"  data-exchange-type="input" data-currency-code="<%= item.currency.code %>" data-currency="<%= item.currency.id %>" data-exchange="<%= item.id %>" data-bank="<%= bank.id%>" data-body="3" data-typecy="3" data-system-name="<%= bank.name %>" data-logo="<%= bank.logo.url(:med) %>" >
+            		    <div class="main_1g8">
+            		      <span>  <%= image_tag bank.logo.url(:small) %></span>
+            		    </div>
+            		    <div class="main_2-h"><%= bank.name + ' ' + item.currency.code %></div>
+            	        </div>
+		    <% end %>
+		<% end %>
+                <% @exchanges.select(:cryptocurrency_id).distinct.each do |item| %>
+            	    <div class="main_k0X"  data-exchange-type="input" data-cryptocurrency="<%= item.cryptocurrency.id %>" data-exchange="<%= item.id %>" data-currency-code="<%= item.cryptocurrency.code %>" data-body="3" data-typecy="3" data-system-name="<%= item.cryptocurrency.name %>" data-logo="<%= item.cryptocurrency.logo.url(:med) %>" >
+            		<div class="main_1g8">
+            		  <span>  <%= image_tag item.cryptocurrency.logo.url(:small) %></span>
+            		</div>
+            		<div class="main_2-h"><%= item.cryptocurrency.name %></div>
+            	    </div>
+                <% end %>
+                
+                </div>
+                
+
+              </div>
+            </div>
+        </div>
+    </div>
+    

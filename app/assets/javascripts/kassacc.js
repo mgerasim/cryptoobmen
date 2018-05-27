@@ -372,8 +372,19 @@ $(document).ready(function() {
    $("#order-alert").hide();
    
    // Orders
+  
    
    $("#sendOrder").click(function() {
+	
+//	$('#my-modal').on('shown.bs.modal', function () {
+	  
+//	})
+
+
+   $('#myModal').modal('show');
+
+
+
 	var value_input = $("#value-input").val();
 	var value_output = $("#value-output").val();
 	var currency_input = $("#form_cash_a_name").text() + " " + $("#input-currency").text();

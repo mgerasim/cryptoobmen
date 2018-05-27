@@ -1,0 +1,75 @@
+           <div class="main_3FS" data-exchange-column="output">
+        <div data-block="main" class="main_xU-" style="height: 657.667px;">
+
+
+<%= render 'welcome/modalInstructions' %>
+
+            <div class="main_2eU">
+                <div class="main_1Me">
+                    <span class="main_1dZ"></span>
+                </div>
+                2. Получите            </div>
+            <div class="main_3MK">
+                <div class="form_2Ix" data-exchange-form="output">
+                    <div class="form_2Gw">
+                        <input id="value-output" class="form_2nL" value="0">
+                    </div>
+                    <div class="form_1CY">
+                        <span class="main_3Mj">
+                            <span data-exchange-icon="output"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div id="mobioutput" class="main_Uu_" data-exchange-toggle="select">
+        	<span class="main_11I">
+		    <span></span>
+		</span> 
+		Ethereum
+	    </div>
+            <div class="main_rpT">
+              <div class="main_2HO">
+                <div class="main_2Tp">
+                  <button id="btn_close" type="button" class="buttons_3i0" data-exchange-dismiss="select">
+                    <span class="main_Uww"></span>
+                  </button>
+                </div>
+
+                <p>
+                    <span class="main_2aj">                        <span class="main_3g_">Резервы валют</span>
+                    </span> Выберите систему:
+                </p>
+
+
+
+                <div id="cashes_to" class="main_2Lu step_ps_list"> 
+                
+            <% @exchanges.each do |exchange| %>
+                <% exchange.currency.banks.each do |bank| %>
+            	    <div class="main_k0X exchange-output"  data-exchange-type="output" data-currency-code="<%= exchange.currency.code %>" data-cryptocurrency="<%= exchange.cryptocurrency.id%>"  data-currency="<%= exchange.currency.id%>" data-exchange="<%= exchange.id %>" data-bank="<%= bank.id %>" data-system-name="<%= bank.name %>"  data-body="3" data-typecy="3" data-store="Карта " data-logo="<%= bank.logo.url(:med) %>" data-course-output="<%= exchange.converter %>" data-course-input="1" data-coeffburse="">
+            		    <div class="main_1g8">
+            		      <span>  <%= image_tag bank.logo.url(:small) %></span>
+            		    </div>
+            		    <div class="main_2-h"><%= bank.name + ' ' + exchange.currency.code %></div>
+            	        </div>            	        
+            	<% end %>
+            	
+            	<div class="main_k0X exchange-output"  data-exchange-type="output" data-cryptocurrency="<%= exchange.cryptocurrency.id %>" data-currency="<%= exchange.currency.id%>" data-exchange="<%= exchange.id %>" data-currency-code="<%= exchange.cryptocurrency.code %>" data-body="3" data-typecy="3" data-system-name="<%= exchange.cryptocurrency.name %>" data-store="Кошелек " data-logo="<%= exchange.cryptocurrency.logo.url(:med) %>" data-course-input="<%= exchange.converter_crypto %>" data-course-output="1" data-coeffburse="<%= exchange.coeffbursetext %>">
+            		<div class="main_1g8">
+            		  <span>  <%= image_tag exchange.cryptocurrency.logo.url(:small) %></span>
+            		</div>
+            		<div class="main_2-h"><%= exchange.cryptocurrency.name %></div>
+            	</div>
+            	
+            <% end %>
+    
+                </div>
+
+
+
+
+              </div>
+            </div>
+        </div>
+    </div>
+ 
