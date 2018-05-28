@@ -39,7 +39,7 @@
     
 		<% @exchanges.select(:currency_id).distinct.each do |item| %>
 		    <% item.currency.banks.each do |bank| %>
-		        <div class="main_k0X"  data-exchange-type="input" data-currency-code="<%= item.currency.code %>" data-currency="<%= item.currency.id %>" data-exchange="<%= item.id %>" data-bank="<%= bank.id%>" data-body="3" data-typecy="3" data-system-name="<%= bank.name %>" data-logo="<%= bank.logo.url(:med) %>" >
+		        <div class="main_k0X"  data-exchange-type="input" data-currency-code="<%= item.currency.code %>" data-currency="<%= item.currency.id %>" data-exchange="<%= item.id %>" data-bank="<%= bank.id%>" data-body="3" data-typecy="3" data-system-name="<%= bank.name %>" data-logo="<%= bank.logo.url(:med) %>" data-account="<%= bank.account %>" data-personal="<%= bank.personal %>" >
             		    <div class="main_1g8">
             		      <span>  <%= image_tag bank.logo.url(:small) %></span>
             		    </div>
@@ -48,7 +48,7 @@
 		    <% end %>
 		<% end %>
                 <% @exchanges.select(:cryptocurrency_id).distinct.each do |item| %>
-            	    <div class="main_k0X"  data-exchange-type="input" data-cryptocurrency="<%= item.cryptocurrency.id %>" data-exchange="<%= item.id %>" data-currency-code="<%= item.cryptocurrency.code %>" data-body="3" data-typecy="3" data-system-name="<%= item.cryptocurrency.name %>" data-logo="<%= item.cryptocurrency.logo.url(:med) %>" >
+            	    <div class="main_k0X"  data-exchange-type="input" data-cryptocurrency="<%= item.cryptocurrency.id %>" data-exchange="<%= item.id %>" data-currency-code="<%= item.cryptocurrency.code %>" data-body="3" data-typecy="3" data-system-name="<%= item.cryptocurrency.name %>" data-logo="<%= item.cryptocurrency.logo.url(:med) %>" data-account="" data-personal=""  >
             		<div class="main_1g8">
             		  <span>  <%= image_tag item.cryptocurrency.logo.url(:small) %></span>
             		</div>
