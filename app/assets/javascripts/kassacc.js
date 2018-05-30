@@ -73,6 +73,9 @@ function UpdateInput(InputCurrency) {
     
     if ( typeof InputCurrency.data("cryptocurrency") !== 'undefined' ) 
     {
+    	$("#instruction_field01").text("Кошелек")
+    	$("#instruction_field02").hide();
+    	$("#instruction_field03").hide();
     
 	store = "Кошелек ";
     
@@ -103,6 +106,10 @@ function UpdateInput(InputCurrency) {
     else
     {
 //    if (InputCurrency.data("bank") !== 'undefined' )
+
+    	$("#instruction_field01").text("Получатель");
+    	$("#instruction_field02").show();
+    	$("#instruction_field03").show();
 
 	var currency = InputCurrency.data("currency");
 	
