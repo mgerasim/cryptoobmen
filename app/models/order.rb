@@ -1,20 +1,19 @@
 class Order < ApplicationRecord
     default_scope { order(created_at: :desc) }
     def statusname
-	if (self.status == 1)
-	    "Новая"
-	        else
-	            
-	                if (self.status == 2)
-	            	"В работе"
-	            	    else
-	            	        
-	            	            if (self.status == 3)
-	            	        	"Выполнена"
-	            	        	    else
-	            	        	         "Статус не определен"
-	            	        	             end
-	            	        	                 end
-	            	        	                 end
+    	case self.status
+    	when 1
+    		"Новая"
+    	when 2
+    		"В работе"
+    	when 3
+    		"Выполнена"
+    	when 4
+    		"Оплачен"
+    	when 5
+    		"Не оплачен"
+    	else
+    		"Статус не определен"
+    	end
     end
 end
