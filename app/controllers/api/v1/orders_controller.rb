@@ -12,5 +12,14 @@ class Api::V1::OrdersController < ApplicationController
     order.output_account = params[:output_account]
     order.status = params[:status]
     order.save
+    @id = order.id
+    render :layout => false
+  end
+
+  def duration
+    order = Order.find(params[:id])
+    @duration = 1
+    @duration = 20 if Rails.env.production?
+    render :layout => false
   end
 end

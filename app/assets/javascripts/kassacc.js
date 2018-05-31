@@ -397,7 +397,7 @@ $(document).ready(function() {
 		var fullname = $("#order-fullname").val();
 		var input_account_store = $("#order-input-account-store").val();
 		var output_account_store = $("#order-output-account-store").val();
-		var status = 1;
+		var status = 5;
 
    		$(this).addClass("loading");
 
@@ -427,6 +427,8 @@ $(document).ready(function() {
 
    });
    
+   var ID = 0;
+
    $("#sendOrder").click(function() {
 
 	var value_input = $("#value-input").val();
@@ -473,23 +475,42 @@ $(document).ready(function() {
 		    function(data, status) {
 		    }
 		)
-		.done(function() {
+		.done(function(msg) {
+			ID = msg;
+
+			$.get("/api/v1/orders/duration",
+				{
+					id: ID
+
+				},
+				function(data, status) {
+
+				}
+			)
+			.done(function(msg) {
+				DURATION = msg * 60;
+				tick();
+
+			});
+
 		    $("#order-alert").show();
 		    $("#modalInstructionBtn").removeClass("loading");
 
 			$('#myModal').modal('show');
 
-
 		});	
-
-	
    });
-   
-   
 });
 
 
-
+var DURATION = 0;
+function tick() {
+	var min = Math.floor(DURATION / 60); 
+	var sec = DURATION % 60;
+	$('#ticketdonetimer').text('Оплатите заявку в течение ' + min + ' мин ' + sec + ' сек');
+	DURATION--;
+	setTimeout(tick, 1000);
+}
 
 
 document.addEventListener("DOMContentLoadedee", function() {
