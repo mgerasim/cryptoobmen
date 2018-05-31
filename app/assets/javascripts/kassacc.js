@@ -401,29 +401,29 @@ $(document).ready(function() {
 
    		$(this).addClass("loading");
 
-	$.post("/api/v1/orders/create",
-	    {
-		value_input: value_input,
-		value_output: value_output,
-		currency_input: currency_input,
-		currency_output: currency_output,
-		email: email,
-		fullname: fullname,
-		input_account: input_account_store,
-		output_account: output_account_store,
-		status: status
-	    },
-	    function(data, status) {
-	    }
-	)
-	.done(function() {
-	    $("#order-alert").show();
-	    $("#modalInstructionBtn").removeClass("loading");
+		$.post("/api/v1/orders/create",
+		    {
+			value_input: value_input,
+			value_output: value_output,
+			currency_input: currency_input,
+			currency_output: currency_output,
+			email: email,
+			fullname: fullname,
+			input_account: input_account_store,
+			output_account: output_account_store,
+			status: status
+		    },
+		    function(data, status) {
+		    }
+		)
+		.done(function() {
+		    $("#order-alert").show();
+		    $("#modalInstructionBtn").removeClass("loading");
 
-		$('#myModal').modal('hide');
+			$('#myModal').modal('hide');
 
 
-	});	
+		});	
 
    });
    
@@ -458,17 +458,30 @@ $(document).ready(function() {
 	    return ;
 	}
 
-	$('#myModal').modal('show');
+	$.post("/api/v1/orders/create",
+		    {
+			value_input: value_input,
+			value_output: value_output,
+			currency_input: currency_input,
+			currency_output: currency_output,
+			email: email,
+			fullname: fullname,
+			input_account: input_account_store,
+			output_account: output_account_store,
+			status: status
+		    },
+		    function(data, status) {
+		    }
+		)
+		.done(function() {
+		    $("#order-alert").show();
+		    $("#modalInstructionBtn").removeClass("loading");
+
+			$('#myModal').modal('show');
 
 
-	
-	console.log(output_account_store);
-	
-	
-       $('[data-toggle="tooltip"]').tooltip({title : 'Текст всплывающей подсказки при отсутствии атрибута data-title.',
-           placement: 'right',
-               delay: { show: 300, hide: 1000 }});
-	
+		});	
+
 	
    });
    
