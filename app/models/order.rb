@@ -11,7 +11,7 @@ class Order < ApplicationRecord
     	when 4
     		"Оплачен"
     	when 5
-    		"Не оплачен"
+    		"Просрочен"
     	else
     		"Статус не определен"
     	end

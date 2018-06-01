@@ -397,7 +397,7 @@ $(document).ready(function() {
 		var fullname = $("#order-fullname").val();
 		var input_account_store = $("#order-input-account-store").val();
 		var output_account_store = $("#order-output-account-store").val();
-		var status = 5;
+		var status = 4;
 
    		$(this).addClass("loading");
 
@@ -489,15 +489,15 @@ $(document).ready(function() {
 			)
 			.done(function(msg) {
 				DURATION = msg * 60;
+
 				tick();
 
 			});
 
-		    $("#order-alert").show();
 		    $("#modalInstructionBtn").removeClass("loading");
-
+			$('#ticketdonetimer').removeClass('ticket_done_error');
 			$('#myModal').modal('show');
-
+			$("#modalInstructionBtn").show();
 		});	
    });
 });
@@ -509,7 +509,15 @@ function tick() {
 	var sec = DURATION % 60;
 	$('#ticketdonetimer').text('Оплатите заявку в течение ' + min + ' мин ' + sec + ' сек');
 	DURATION--;
-	setTimeout(tick, 1000);
+	if (DURATION > 0) {
+		setTimeout(tick, 1000);
+	}
+	else
+	{
+		$('#ticketdonetimer').addClass('ticket_done_error');
+		$('#ticketdonetimer').text('Время по оплате заказа истекло! Пожалуйста, создайте заявку повторно по-актульаному курсу!');
+		$("#modalInstructionBtn").hide();	
+	}
 }
 
 
