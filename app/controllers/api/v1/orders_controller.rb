@@ -22,4 +22,10 @@ class Api::V1::OrdersController < ApplicationController
     @duration = 20 if Rails.env.production?
     render :layout => false
   end
+
+  def status
+    order = Order.find(params[:id])
+    order.update(:status => params[:status])
+    render :layout => false
+  end
 end

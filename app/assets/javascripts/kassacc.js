@@ -389,28 +389,13 @@ $(document).ready(function() {
 
    $("#modalInstructionBtn").click(function() {
 
-   		var value_input = $("#value-input").val();
-		var value_output = $("#value-output").val();
-		var currency_input = $("#form_cash_a_name").text() + " " + $("#input-currency").text();
-		var currency_output = $("#form_cash_b_name").text() + " " + $("#output-currency").text();
-		var email = $("#order-email").val();
-		var fullname = $("#order-fullname").val();
-		var input_account_store = $("#order-input-account-store").val();
-		var output_account_store = $("#order-output-account-store").val();
 		var status = 4;
 
    		$(this).addClass("loading");
 
-		$.post("/api/v1/orders/create",
+		$.post("/api/v1/orders/status",
 		    {
-			value_input: value_input,
-			value_output: value_output,
-			currency_input: currency_input,
-			currency_output: currency_output,
-			email: email,
-			fullname: fullname,
-			input_account: input_account_store,
-			output_account: output_account_store,
+			id: ID,
 			status: status
 		    },
 		    function(data, status) {

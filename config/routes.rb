@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       post 'orders/create'
       get 'orders/duration'
+      post 'orders/status'
     end
   end
 
