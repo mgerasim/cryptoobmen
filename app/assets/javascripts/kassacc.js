@@ -407,6 +407,8 @@ $(document).ready(function() {
 
 			$('#myModal').modal('hide');
 
+			$('#myModalFinish').modal('show')
+
 
 		});	
 
