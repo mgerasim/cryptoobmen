@@ -407,6 +407,7 @@ $(document).ready(function() {
 
 			$('#myModal').modal('hide');
 
+			$('#id_order').text(ID);
 			$('#myModalFinish').modal('show')
 
 
