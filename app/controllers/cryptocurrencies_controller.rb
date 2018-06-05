@@ -70,6 +70,6 @@ class CryptocurrenciesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cryptocurrency_params
-      params.require(:cryptocurrency).permit(:code, :name, :logo)
+      params.require(:cryptocurrency).permit(:code, :name, :minexchange, :logo)
     end
 end
