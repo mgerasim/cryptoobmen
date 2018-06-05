@@ -8,6 +8,7 @@
       <th>Логотип</th>
       <th>Код</th>
       <th>Наименование</th>
+      <th>Минимальное значение обмена</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= image_tag cryptocurrency.logo.url(:med) %></td>
         <td><%= cryptocurrency.code %></td>
         <td><%= cryptocurrency.name %></td>
+        <td><%= cryptocurrency.minexchange %></td>
         <td><%= link_to 'Показать', cryptocurrency %></td>
         <td><%= link_to 'Редактировать', edit_cryptocurrency_path(cryptocurrency) %></td>
         <td><%= link_to 'Удалить', cryptocurrency, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
