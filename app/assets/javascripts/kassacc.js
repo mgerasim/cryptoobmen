@@ -193,6 +193,17 @@ function UpdateOutput(Currency) {
     //$("#coeffburse").text( Currency.data('coeffburse' ) );
     $(document).find('[data-exchange-coeffburse="input"]').text( Currency.data('coeffburse') );
 
+
+    if (Currency.data('minexchange') != null) 
+    {
+    	$('#value-output').attr("minexchange", Currency.data('minexchange'));
+    }
+    else
+    {
+    	$('#value-output').attr("minexchange", "");
+    }
+    
+
 }
 
 function InitOutput() {
@@ -355,6 +366,9 @@ $(document).ready(function() {
         var course_input = parseFloat($('#course-input-value').text());
         $("#value-output").val( (parseFloat($(this).val()) / course_input *  g_course_output).toFixed(3)  );
         $(document).find('[data-exchange-value="output"]').text( $("#value-output").val() );
+
+
+   		$("#tooltip_minexchange").hide();
      });
      
      $("#value-output").keyup(function(e) {
@@ -363,6 +377,9 @@ $(document).ready(function() {
 //          var course_output = parseFloat($('#currency-exchange').text());
           $("#value-input").val( (parseFloat($(this).val()) / g_course_output * g_course_input).toFixed(3) );
           $(document).find('[data-exchange-value="input"]').text( $("#value-input").val() );
+
+
+   		$("#tooltip_minexchange").hide();
      });
    
    $("#order-email").change(function() {
@@ -418,6 +435,20 @@ $(document).ready(function() {
    var ID = 0;
 
    $("#sendOrder").click(function() {
+
+   	$("#tooltip_minexchange").hide();
+
+
+   	if ($('#value-output').attr('minexchange') != null) 
+   	{
+   		if ($('#value-output').attr('minexchange') > $('#value-output').val())
+   		{
+   			$("#tooltip_minexchange_value").text($('#value-output').attr('minexchange'));
+   			$("#tooltip_minexchange").show();
+   			return
+   		}
+   	}
+
 
 	var value_input = $("#value-input").val();
 	var value_output = $("#value-output").val();

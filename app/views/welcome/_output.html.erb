@@ -21,6 +21,11 @@
                         </span>
                     </div>
                 </div>
+                <div class="tooltip tooltip-danger fade bottom in" role="tooltip" style="/*! width: 338.867px; */ /*! top: 290.2px; */ /*! left: 785px; */ display: none;" id="tooltip_minexchange"><div class="tooltip-arrow" style="left: 50%;"></div><button type="button" class="tooltip-cross"></button><div class="tooltip-inner"><div class="tooltip-title">Внимание!</div><div class="tooltip-text">Минимальная сумма обмена по данному направлению <span id="tooltip_minexchange_value"></span> </div></div></div>
+
+
+
+
             </div>
             <div id="mobioutput" class="main_Uu_" data-exchange-toggle="select">
         	<span class="main_11I">
@@ -55,7 +60,7 @@
             	        </div>            	        
             	<% end %>
             	
-            	<div class="main_k0X exchange-output"  data-exchange-type="output" data-cryptocurrency="<%= exchange.cryptocurrency.id %>" data-currency="<%= exchange.currency.id%>" data-exchange="<%= exchange.id %>" data-currency-code="<%= exchange.cryptocurrency.code %>" data-body="3" data-typecy="3" data-system-name="<%= exchange.cryptocurrency.name %>" data-store="Кошелек " data-logo="<%= exchange.cryptocurrency.logo.url(:med) %>" data-course-input="<%= exchange.converter_crypto %>" data-course-output="1" data-coeffburse="<%= exchange.coeffbursetext %>">
+            	<div class="main_k0X exchange-output"  data-exchange-type="output" data-cryptocurrency="<%= exchange.cryptocurrency.id %>" data-minexchange="<%= exchange.cryptocurrency.minexchange %>" data-currency="<%= exchange.currency.id%>" data-exchange="<%= exchange.id %>" data-currency-code="<%= exchange.cryptocurrency.code %>" data-body="3" data-typecy="3" data-system-name="<%= exchange.cryptocurrency.name %>" data-store="Кошелек " data-logo="<%= exchange.cryptocurrency.logo.url(:med) %>" data-course-input="<%= exchange.converter_crypto %>" data-course-output="1" data-coeffburse="<%= exchange.coeffbursetext %>">
             		<div class="main_1g8">
             		  <span>  <%= image_tag exchange.cryptocurrency.logo.url(:small) %></span>
             		</div>
