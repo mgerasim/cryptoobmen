@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Статус Вашего заказа <%= @order.id %> изменен на <%= @order.statusname %></h1>
+    <p>
+      <table>
+        <tbody>
+          <tr>
+            <td>Отдаете</td>
+            <td><%= @order.value_input %></td>
+            <td><%= @order.currency_input %></td>
+          </tr>
+
+          <tr>
+            <td>Получаете</td>
+            <td><%= @order.value_output %></td>
+            <td><%= @order.currency_output %></td>
+          </tr>
+
+          <tr>
+            <td>ФИО</td>
+            <td colspan="2"><%= @order.fullname %></td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>Реквизиты отдачи</td>
+            <td colspan="2"><%= @order.input_account %></td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>Реквизиты получения</td>
+            <td colspan="2"><%= @order.output_account %></td>
+            <td></td>
+          </tr>
+
+        </tbody>
+      </table>
+      <br>
+    </p>
+    
+
+  </body>
+</html>

@@ -1,0 +1,12 @@
+Вы оформили заказ 
+===============================================
+ 
+Отдаете	<%= @order.value_input %>	<%= @order.currency_input %>
+Получаете	<%= @order.value_output %><	<%= @order.currency_output %>
+ФИО	<%= @order.fullname %>
+Реквизиты отдачи	<%= @order.input_account %>
+Реквизиты получения	<%= @order.output_account %>
+
+Ваш заказ № <%= @order.id %>
+
+Выполните инструкцию по оплате заказа!

@@ -14,6 +14,9 @@ class Api::V1::OrdersController < ApplicationController
     order.save
     @id = order.id
     render :layout => false
+
+    OrderMailer.with(order: order).create_order.deliver_later
+
   end
 
   def duration
@@ -27,5 +30,8 @@ class Api::V1::OrdersController < ApplicationController
     order = Order.find(params[:id])
     order.update(:status => params[:status])
     render :layout => false
+
+
+    OrderMailer.with(order: order).status_order.deliver_later
   end
 end
