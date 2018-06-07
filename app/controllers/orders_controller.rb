@@ -43,7 +43,11 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.update(order_params)
 
-        OrderMailer.with(order: @order).status_order.deliver_later
+        if (@order.status == 3) 
+          OrderMailer.with(order: @order).success_order.deliver_later
+        else
+          OrderMailer.with(order: @order).status_order.deliver_later
+        end
 
         format.html { redirect_to @order, notice: 'Order was successfully updated.' }
         format.json { render :show, status: :ok, location: @order }
