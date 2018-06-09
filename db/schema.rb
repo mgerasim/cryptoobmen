@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180605140242) do
+ActiveRecord::Schema.define(version: 20180609120748) do
 
   create_table "admin_cashes", force: :cascade do |t|
     t.string "code"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20180605140242) do
     t.string "logo_content_type"
     t.integer "logo_file_size"
     t.datetime "logo_updated_at"
-    t.integer "minexchange"
+    t.float "minexchange"
   end
 
   create_table "currencies", force: :cascade do |t|
