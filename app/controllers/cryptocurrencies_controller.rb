@@ -26,6 +26,7 @@ class CryptocurrenciesController < ApplicationController
   # POST /cryptocurrencies.json
   def create
     @cryptocurrency = Cryptocurrency.new(cryptocurrency_params)
+    @cryptocurrency.minexchange = params[:cryptocurrency][:minexchange].gsub(',','.').to_f
 
     respond_to do |format|
       if @cryptocurrency.save
@@ -41,6 +42,8 @@ class CryptocurrenciesController < ApplicationController
   # PATCH/PUT /cryptocurrencies/1
   # PATCH/PUT /cryptocurrencies/1.json
   def update
+    @cryptocurrency.minexchange = params[:cryptocurrency][:minexchange].gsub(',','.').to_f
+
     respond_to do |format|
       if @cryptocurrency.update(cryptocurrency_params)
         format.html { redirect_to @cryptocurrency, notice: 'Cryptocurrency was successfully updated.' }
@@ -70,6 +73,6 @@ class CryptocurrenciesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cryptocurrency_params
-      params.require(:cryptocurrency).permit(:code, :name, :minexchange, :logo)
+      params.require(:cryptocurrency).permit(:code, :name, :logo)
     end
 end
