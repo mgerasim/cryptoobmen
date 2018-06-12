@@ -1,0 +1,33 @@
+<%= form_with(model: news, local: true, :class => "form-horizontal" ) do |form| %>
+  <% if news.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(news.errors.count, "error") %> prohibited this news from being saved:</h2>
+
+      <ul>
+      <% news.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label "Заголовок", :class => "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <%= form.text_field :title, id: :news_title, :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label "Текст", :class => "col-sm-3 control-label" %>
+    <div class="col-sm-9">
+      <%= form.text_area :body, id: :news_body, :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+      <%= form.submit "Сохранить", :class => "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

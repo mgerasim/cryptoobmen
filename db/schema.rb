@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180609120748) do
+ActiveRecord::Schema.define(version: 20180612030543) do
 
   create_table "admin_cashes", force: :cascade do |t|
     t.string "code"
@@ -89,6 +89,13 @@ ActiveRecord::Schema.define(version: 20180609120748) do
     t.index ["cryptocurrency_id", "currency_id"], name: "index_exchanges_on_cryptocurrency_id_and_currency_id", unique: true
     t.index ["cryptocurrency_id"], name: "index_exchanges_on_cryptocurrency_id"
     t.index ["currency_id"], name: "index_exchanges_on_currency_id"
+  end
+
+  create_table "news", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|
