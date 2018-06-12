@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180612030543) do
+ActiveRecord::Schema.define(version: 20180612113644) do
 
   create_table "admin_cashes", force: :cascade do |t|
     t.string "code"
@@ -96,6 +96,9 @@ ActiveRecord::Schema.define(version: 20180612030543) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "url_source"
+    t.date "published_at"
+    t.index ["url_source"], name: "index_news_on_url_source", unique: true
   end
 
   create_table "orders", force: :cascade do |t|

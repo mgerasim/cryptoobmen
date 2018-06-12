@@ -72,3 +72,5 @@ gem 'autoprefixer-rails'
 gem 'whenever', require: false
 gem 'addressable'
 gem 'paperclip'
+gem 'nokogiri'
+gem 'net'

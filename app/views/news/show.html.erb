@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <strong>Body:</strong>
-  <%= @news.body %>
+
+  <%= raw(@news.body) %>
 </p>
 
 <%= link_to 'Edit', edit_news_path(@news) %> |
