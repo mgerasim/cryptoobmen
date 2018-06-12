@@ -49,7 +49,7 @@ namespace :news do
 
 	    text_content = page.css("div.text_content")[0]
 
-	    text_content.css('div.article_footer').remove
+	    text_content.css('div.article_footer').remove if text_content.css('div.article_footer') != nil
 
 	    news_body = ""
 	    text_content.css('p').each{ |p|
