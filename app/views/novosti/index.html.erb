@@ -1,0 +1,27 @@
+<h1>Новости о Биткоин и криптовалютах</h1>
+
+<div class="row">
+	<div class="col-sm-4">
+		<% @novosti.each do |news| %>		
+	
+			<div class="row">
+				<div class="col-sm-12">
+					<%= link_to news.title, :controller => "novosti", :id => news.id %>
+				</div>
+			</div>
+			<hr>
+
+		<% end %>
+
+	</div>
+	<div class="col-sm-8">
+			<h1>
+			  <%= @news.title %>
+			</h1>
+
+			<p>
+
+			  <%= raw(@news.body) %>
+			</p>
+	</div>
+</div>

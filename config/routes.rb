@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get '/novosti', to: 'novosti#index'
+
+  get 'novosti/show'
+
   resources :news
   namespace :api do
     namespace :v1 do
