@@ -25,3 +25,7 @@ end
 every 5.minute do # 1.minute 1.day 1.week 1.month 1.year is also supported
     rake "course:update"
 end
+
+every 1.hour do
+	rake "rake news:parser"
+end
