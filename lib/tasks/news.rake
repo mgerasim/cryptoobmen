@@ -24,7 +24,12 @@ namespace :news do
     	url_source = link.css('a').map {|element| element["href"]}
     	title = link.css('a').text
 
-    	news = News.where(url_source: url_source).first
+      next if (url_source[0] == nil)
+      puts url_source
+
+    	news = News.find_by_url_source(url_source[0])
+
+      puts news.id if news != nil
 
     	next if (news != nil) 
 
@@ -61,7 +66,7 @@ namespace :news do
 
 	    news_new.title = title
 	    news_new.published_at = published_at
-	    news_new.url_source = url_source
+	    news_new.url_source = url_source[0]
 	    news_new.body = news_body
 
 	    news_new.save
