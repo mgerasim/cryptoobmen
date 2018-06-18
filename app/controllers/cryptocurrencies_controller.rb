@@ -30,7 +30,7 @@ class CryptocurrenciesController < ApplicationController
 
     respond_to do |format|
       if @cryptocurrency.save
-        format.html { redirect_to @cryptocurrency, notice: 'Cryptocurrency was successfully created.' }
+        format.html { redirect_to @cryptocurrency, notice: 'Криптовалюта успешна создана.' }
         format.json { render :show, status: :created, location: @cryptocurrency }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class CryptocurrenciesController < ApplicationController
 
     respond_to do |format|
       if @cryptocurrency.update(cryptocurrency_params)
-        format.html { redirect_to @cryptocurrency, notice: 'Cryptocurrency was successfully updated.' }
+        format.html { redirect_to @cryptocurrency, notice: 'Криптовалюта успешна обновлена.' }
         format.json { render :show, status: :ok, location: @cryptocurrency }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class CryptocurrenciesController < ApplicationController
   def destroy
     @cryptocurrency.destroy
     respond_to do |format|
-      format.html { redirect_to cryptocurrencies_url, notice: 'Cryptocurrency was successfully destroyed.' }
+      format.html { redirect_to cryptocurrencies_url, notice: 'Криптовалюта успешна удалена.' }
       format.json { head :no_content }
     end
   end

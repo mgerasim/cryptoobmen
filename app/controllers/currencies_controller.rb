@@ -29,7 +29,7 @@ class CurrenciesController < ApplicationController
 
     respond_to do |format|
       if @currency.save
-        format.html { redirect_to @currency, notice: 'Currency was successfully created.' }
+        format.html { redirect_to @currency, notice: 'Валюта успешна создана.' }
         format.json { render :show, status: :created, location: @currency }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class CurrenciesController < ApplicationController
   def update
     respond_to do |format|
       if @currency.update(currency_params)
-        format.html { redirect_to @currency, notice: 'Currency was successfully updated.' }
+        format.html { redirect_to @currency, notice: 'Валюта успешна обновлена.' }
         format.json { render :show, status: :ok, location: @currency }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class CurrenciesController < ApplicationController
   def destroy
     @currency.destroy
     respond_to do |format|
-      format.html { redirect_to currencies_url, notice: 'Currency was successfully destroyed.' }
+      format.html { redirect_to currencies_url, notice: 'Валюта успешна удалена.' }
       format.json { head :no_content }
     end
   end

@@ -29,7 +29,7 @@ class BanksController < ApplicationController
 
     respond_to do |format|
       if @bank.save
-        format.html { redirect_to @bank, notice: 'Bank was successfully created.' }
+        format.html { redirect_to @bank, notice: 'Банк успешно создан.' }
         format.json { render :show, status: :created, location: @bank }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class BanksController < ApplicationController
   def update
     respond_to do |format|
       if @bank.update(bank_params)
-        format.html { redirect_to @bank, notice: 'Bank was successfully updated.' }
+        format.html { redirect_to @bank, notice: 'Банк успешно обновлен.' }
         format.json { render :show, status: :ok, location: @bank }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class BanksController < ApplicationController
   def destroy
     @bank.destroy
     respond_to do |format|
-      format.html { redirect_to banks_url, notice: 'Bank was successfully destroyed.' }
+      format.html { redirect_to banks_url, notice: 'Банк успешно обновлен.' }
       format.json { head :no_content }
     end
   end

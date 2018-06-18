@@ -30,7 +30,7 @@ class ExchangesController < ApplicationController
 
     respond_to do |format|
       if @exchange.save
-        format.html { redirect_to @exchange, notice: 'Exchange was successfully created.' }
+        format.html { redirect_to @exchange, notice: 'Обмен успешно создан.' }
         format.json { render :show, status: :created, location: @exchange }
       else
         format.html { render :new }
@@ -45,7 +45,7 @@ class ExchangesController < ApplicationController
     @exchange.coeffburse = params[:exchange][:coeffburse].gsub(',','.').to_f
     respond_to do |format|
       if @exchange.update(exchange_params)
-        format.html { redirect_to @exchange, notice: 'Exchange was successfully updated.' }
+        format.html { redirect_to @exchange, notice: 'Обмен успешно обновлен.' }
         format.json { render :show, status: :ok, location: @exchange }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class ExchangesController < ApplicationController
   def destroy
     @exchange.destroy
     respond_to do |format|
-      format.html { redirect_to exchanges_url, notice: 'Exchange was successfully destroyed.' }
+      format.html { redirect_to exchanges_url, notice: 'Обмен успешно удален.' }
       format.json { head :no_content }
     end
   end
