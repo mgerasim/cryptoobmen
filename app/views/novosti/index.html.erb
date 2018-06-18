@@ -7,14 +7,17 @@
 <div class="row">
 	<div class="col-sm-4">
 		<% @novosti.each do |news| %>		
-	
+			
 			<div class="row">
-				<div class="col-sm-12">
+				<% if news.id == @news.id %>
+					<div class="col-sm-12 bg-primary text-white">
+				<% else %>
+					<div class="col-sm-12">
+				<% end %>
 					<%= l news.published_at, format: "%d %B %Y"  %><br><%= link_to news.title, :controller => "novosti", :id => "#{news.id}-#{news.title.parameterize}" %>
 				</div>
 			</div>
 			<hr>
-
 		<% end %>
 
 	</div>
