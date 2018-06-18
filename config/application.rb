@@ -22,5 +22,6 @@ module Cryptoobmen
     config.assets.version = '1.0'
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
+    config.i18n.default_locale = :ru
   end
 end
