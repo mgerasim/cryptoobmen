@@ -25,23 +25,16 @@ namespace :news do
     	title = link.css('a').text
 
       next if (url_source[0] == nil)
-      puts url_source
-
+      
     	news = News.find_by_url_source(url_source[0])
-
-      puts news.id if news != nil
 
     	next if (news != nil) 
 
     	next if url_source[0] == nil
 
-    	#puts url_source[0] if url_source[0] != nil
-
     	published_at = Date.strptime(date_string, '%d.%m.%y')
 
     	next if((Date.today - 3) > published_at)
-
-    	puts published_at
 
     	url = "https://bits.media" + url_source[0]
 
