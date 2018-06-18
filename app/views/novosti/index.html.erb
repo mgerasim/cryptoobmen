@@ -10,7 +10,7 @@
 	
 			<div class="row">
 				<div class="col-sm-12">
-					<%= l news.published_at, format: "%d %B %Y"  %><br><%= link_to news.title, :controller => "novosti", :id => news.id %>
+					<%= l news.published_at, format: "%d %B %Y"  %><br><%= link_to news.title, :controller => "novosti", :id => "#{news.id}-#{news.title.parameterize}" %>
 				</div>
 			</div>
 			<hr>

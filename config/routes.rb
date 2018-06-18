@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  
   get '/novosti', to: 'novosti#index'
-
-  get 'novosti/show'
+  get '/novosti/:id', to: 'novosti#index'#, as: 'novosti'
 
   resources :news
   namespace :api do
