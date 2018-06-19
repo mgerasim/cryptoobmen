@@ -51,6 +51,8 @@ namespace :news do
 
 	    news_body = ""
 	    text_content.css('p').each{ |p|
+        next if (p.text.include? "Все новости")
+        next if (p.text.include? "Последние новости:")
 	    	news_body += p.to_html
 
 	    }
