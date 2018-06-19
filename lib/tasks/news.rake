@@ -25,12 +25,10 @@ namespace :news do
     	title = link.css('a').text
 
       next if (url_source[0] == nil)
-      
+
     	news = News.find_by_url_source(url_source[0])
 
     	next if (news != nil) 
-
-    	next if url_source[0] == nil
 
     	published_at = Date.strptime(date_string, '%d.%m.%y')
 
@@ -46,8 +44,6 @@ namespace :news do
 	    page = Nokogiri::HTML(answer)
 
 	    text_content = page.css("div.text_content")[0]
-
-      next if text_content == nil
 
 	    text_content.css('div.article_footer').remove if text_content.css('div.article_footer') != nil
 
