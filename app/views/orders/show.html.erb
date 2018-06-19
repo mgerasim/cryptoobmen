@@ -1,54 +1,53 @@
-<p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Value input:</strong>
+  <strong>Отдаете:</strong>
   <%= @order.value_input %>
 </p>
 
 <p>
-  <strong>Value output:</strong>
+  <strong>Получаете:</strong>
   <%= @order.value_output %>
 </p>
 
 <p>
-  <strong>Currency input:</strong>
+  <strong>Валюта отдачи:</strong>
   <%= @order.currency_input %>
 </p>
 
 <p>
-  <strong>Currency output:</strong>
+  <strong>Валюта получения:</strong>
   <%= @order.currency_output %>
 </p>
 
 <p>
-  <strong>Email:</strong>
+  <strong>Электронный адрес:</strong>
   <%= @order.email %>
 </p>
 
 <p>
-  <strong>Fullname:</strong>
+  <strong>ФИО:</strong>
   <%= @order.fullname %>
 </p>
 
 <p>
-  <strong>Input account:</strong>
+  <strong>Реквизиты отдачи:</strong>
   <%= @order.input_account %>
 </p>
 
 <p>
-  <strong>Output account:</strong>
+  <strong>Реквизиты получения:</strong>
   <%= @order.output_account %>
 </p>
 
 <p>
-  <strong>Status:</strong>
+  <strong>Статус:</strong>
   <%= @order.status %>
 </p>
 
 <p>
-  <strong>Agree:</strong>
+  <strong>Я согласен:</strong>
   <%= @order.agree %>
 </p>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to 'Редактировать', edit_order_path(@order) %> |
+<%= link_to 'Назад', orders_path %>
