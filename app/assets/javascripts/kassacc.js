@@ -402,7 +402,10 @@ $(document).ready(function() {
    
    // Orders
   
-
+	function isEmail(email) {
+	  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	  return regex.test(email);
+	}
 
    $("#modalInstructionBtn").click(function() {
 
@@ -460,6 +463,11 @@ $(document).ready(function() {
 	var output_account_store = $("#order-output-account-store").val();
 	var status = 1;
 	if(email == "") {
+	    $("#tooltip_email").show();
+	    return ;
+	}
+
+	if (!isEmail(email))	 {
 	    $("#tooltip_email").show();
 	    return ;
 	}
