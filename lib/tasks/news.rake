@@ -45,10 +45,11 @@ namespace :news do
 
 	    text_content = page.css("div.text_content")[0]
 
+      next if text_content == nil
+
       text_content.xpath("//img").each do |img|
         next if (img['src'].include? "http")
         img['src'] = "https://bits.media" + img['src']
-        puts img['src']
       end
 
 	    text_content.css('div.article_footer').remove if text_content.css('div.article_footer') != nil
