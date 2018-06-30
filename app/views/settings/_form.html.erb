@@ -1,0 +1,32 @@
+<%= form_with(model: setting, local: true) do |form| %>
+  <% if setting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(setting.errors.count, "error") %> prohibited this setting from being saved:</h2>
+
+      <ul>
+      <% setting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :pravila_obmena %>
+    <%= form.text_area :pravila_obmena, id: :setting_pravila_obmena %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contact %>
+    <%= form.text_area :contact, id: :setting_contact %>
+  </div>
+
+  <div class="field">
+    <%= form.label :about %>
+    <%= form.text_area :about, id: :setting_about %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pravila obmena:</strong>
+  <%= @setting.pravila_obmena %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @setting.contact %>
+</p>
+
+<p>
+  <strong>About:</strong>
+  <%= @setting.about %>
+</p>
+
+<%= link_to 'Edit', edit_setting_path(@setting) %> |
+<%= link_to 'Back', settings_path %>

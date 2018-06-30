@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180612113644) do
+ActiveRecord::Schema.define(version: 20180630203525) do
 
   create_table "admin_cashes", force: :cascade do |t|
     t.string "code"
@@ -112,6 +112,14 @@ ActiveRecord::Schema.define(version: 20180612113644) do
     t.string "output_account"
     t.integer "status"
     t.boolean "agree"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.text "pravila_obmena"
+    t.text "contact"
+    t.text "about"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
