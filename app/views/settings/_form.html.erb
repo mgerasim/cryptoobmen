@@ -1,4 +1,4 @@
-<%= form_with(model: setting, local: true) do |form| %>
+<%= form_with(model: setting, local: true, :html => {class: 'form-horizontal'}) do |form| %>
   <% if setting.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(setting.errors.count, "error") %> prohibited this setting from being saved:</h2>
@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :pravila_obmena %>
-    <%= form.text_area :pravila_obmena, id: :setting_pravila_obmena %>
+  <div class="form-group">
+    <%= form.label "Правила обмена", :class => "col-sm-3 control-label" %>
+    <%= form.text_area :pravila_obmena, id: :setting_pravila_obmena, :class => "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :contact %>
-    <%= form.text_area :contact, id: :setting_contact %>
+  <div class="form-group">
+    <%= form.label "Контакты", :class => "col-sm-3 control-label" %>
+    <%= form.text_area :contact, id: :setting_contact, :class => "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :about %>
-    <%= form.text_area :about, id: :setting_about %>
+  <div class="form-group">
+    <%= form.label "О сервисе", :class => "col-sm-3 control-label" %>
+    <%= form.text_area :about, id: :setting_about, :class => "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit "Сохранить", :class => "btn btn-primary" %>
   </div>
 <% end %>

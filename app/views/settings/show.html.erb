@@ -1,19 +1,17 @@
-<p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Pravila obmena:</strong>
+  <strong>Правила обмена:</strong>
   <%= @setting.pravila_obmena %>
 </p>
 
 <p>
-  <strong>Contact:</strong>
+  <strong>Контакты:</strong>
   <%= @setting.contact %>
 </p>
 
 <p>
-  <strong>About:</strong>
+  <strong>О сервисе:</strong>
   <%= @setting.about %>
 </p>
 
-<%= link_to 'Edit', edit_setting_path(@setting) %> |
-<%= link_to 'Back', settings_path %>
+<%= link_to 'Редактировать', edit_setting_path(@setting), :class => "btn btn-primary" %> 
