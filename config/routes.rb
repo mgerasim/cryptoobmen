@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  
   resources :settings
   get '/novosti', to: 'novosti#index'
   get '/novosti/:id', to: 'novosti#index'#, as: 'novosti'

@@ -1,3 +1,5 @@
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-wysiwyg/0.3.3/amd/bootstrap3-wysihtml5.all.min.js"></script>
 <%= form_with(model: setting, local: true, :html => {class: 'form-horizontal'}) do |form| %>
   <% if setting.errors.any? %>
     <div id="error_explanation">
@@ -13,8 +15,19 @@
 
   <div class="form-group">
     <%= form.label "Правила обмена", :class => "col-sm-3 control-label" %>
-    <%= form.text_area :pravila_obmena, id: :setting_pravila_obmena, :class => "form-control" %>
+    <%= form.text_area :pravila_obmena, id: :setting_pravila_obmena, :class => "form-control wysihtml5" %>
   </div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $('.wysihtml5').each(function(i, elem) {
+      $(elem).wysihtml5();
+    });
+
+  })
+</script>
+
 
   <div class="form-group">
     <%= form.label "Контакты", :class => "col-sm-3 control-label" %>

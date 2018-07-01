@@ -17,5 +17,6 @@
 //= require shuffle
 //= require bootstrap-sprockets
 //= require bootstrap
+//= require bootstrap-wysihtml5
 //= require_tree .
 
