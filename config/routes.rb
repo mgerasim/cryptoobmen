@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'about/index'
+  get 'about', to: 'about#index'
+
+  get 'contact/index'
+  get 'contact', to: 'contact#index'
+
+  get 'pravila_obmena/index'
+  get '/pravila_obmena', to: 'pravila_obmena#index'
+
   resources :settings
   get '/novosti', to: 'novosti#index'
   get '/novosti/:id', to: 'novosti#index'#, as: 'novosti'
