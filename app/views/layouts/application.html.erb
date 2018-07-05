@@ -77,6 +77,11 @@
         <div id="grid" class="main_2Js">
             <%= yield %>
         </div>
+
+        <% if !logged_in? %>
+            <%= render 'layouts/footer' %>
+        <% end %>
+
       </div>
     </div>
   </body>
