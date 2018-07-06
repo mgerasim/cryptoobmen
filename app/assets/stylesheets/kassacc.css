@@ -26,3 +26,41 @@
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
+.Page-page--3xFv2 {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-flex: 1;
+	-ms-flex: 1 auto;
+	flex: 1 auto;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	margin-top: 4.6rem;
+	margin-bottom: 2rem;
+}
+
+.Page-content_default--2Z5OK {
+	margin-right: auto;
+	margin-left: auto;
+}
+.StaticWrapper-wrapper--12Smc {
+	background-color: #ffffff;
+	border-radius: 6px;
+	min-height: 52rem;
+}
+.StaticWrapper-content--1TiKD {
+	max-width: 96.2rem;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 5.8rem;
+	width:90%;
+}
+.StaticWrapper-header--2C3pO {
+	padding-top: 4.2rem;
+	padding-bottom: 2.2rem;
+}
