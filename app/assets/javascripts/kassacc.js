@@ -215,8 +215,13 @@ $(document).ready(function() {
     
     
     $('#headerSmallOpen').click(function() {
-	$('#smallMenu').show();
+	       $('#smallMenu').show();
     });
+
+    
+    $('#headerSmallOpen1').click(function() {
+         $('body').toggleClass("header-open");
+    });    
     
     $('#grid1').show();
 });
