@@ -32,7 +32,6 @@ function UpdateInput(InputCurrency) {
     
     var store = "Карта ";
     
-    
     if ( typeof InputCurrency.data("cryptocurrency") !== 'undefined' ) 
     {
     	$("#instruction_field01").text("Кошелек")
@@ -176,7 +175,6 @@ function InitOutput() {
     var level2 = $(level1).children().get(2);
     var level3 = $(level2).children().get(0);
     var init = $(level3);
-    
     UpdateOutput(init);
 
 }
@@ -189,29 +187,28 @@ $(document).ready(function() {
     var level2 = $(level1).children().get(2);
     var level3 = $(level2).children().get(0);
     var init = $(level3);
-    UpdateInput(init);
+    UpdateInput($(init));
     
     $(document).find('[data-exchange-type="input"]').click(function() {
-	UpdateInput($(this));
-	
-	var button = $(".buttons_3i0")[0];
-	
-	button.click();
+      	UpdateInput($(this));
+      	
+      	var button = $(".buttons_3i0")[0];
+      	
+      	button.click();
 	
 	
     });
     
     $(document).find('[data-exchange-type="output"]').click(function() {
-	UpdateOutput($(this));
-	
-	$("#btn_close").click();
+    	UpdateOutput($(this));
+    	
+    	$("#btn_close").click();
     });
     
     $(".exchange-output").click(function() {
-	UpdateOutput($(this));
+	     UpdateOutput($(this));
     });
     
-    InitOutput();
     
     
     $('#headerSmallOpen').click(function() {
